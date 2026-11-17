@@ -1,0 +1,2373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IMWENT STUDIO · 专业吉他节拍器</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+:root{color-scheme:dark;--bg:#10141c;--panel:#1a2230;--panel2:#222d3d;--text:#f2f5fa;--muted:#9aa8bc;--accent:#62b4ff;--green:#42d6ad;--orange:#ffb454;--red:#ff6868}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#202d40 0,#10141c 55%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;min-height:100vh;padding:24px}
+main{max-width:900px;margin:auto}
+header{text-align:center;margin:8px 0 22px}
+.brand-mark{display:flex;justify-content:flex-start;align-items:center;margin:0 0 18px}
+.brand-mark img{display:block;width:min(184px,48vw);height:auto;filter:brightness(0) invert(1);opacity:.96}
+header .eyebrow{font-size:12px;letter-spacing:3px;color:var(--accent);font-weight:700}
+h1{font-size:clamp(25px,5vw,36px);margin:8px 0 5px}
+header p{color:var(--muted);margin:0}
+.panel{background:rgba(26,34,48,.94);border:1px solid #303d50;border-radius:18px;padding:22px;margin:14px 0;box-shadow:0 12px 32px #0003}
+.tempo{text-align:center;padding:22px 10px 14px}
+#bpm{font-size:clamp(64px,13vw,100px);font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.unit{color:var(--muted);font-size:13px;letter-spacing:3px;margin:8px}
+.tempo-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin:14px}
+button,select,input{font:inherit}
+button{border:1px solid #40516a;background:var(--panel2);color:var(--text);border-radius:10px;padding:10px 15px;cursor:pointer;transition:.15s}
+button:hover{filter:brightness(1.18);border-color:var(--accent)}
+button:active{transform:translateY(1px)}
+button.primary{background:#176fc1;border-color:#3998ed;font-weight:750;min-width:180px}
+button.stop{background:#a43b46;border-color:#d45b67}
+button:disabled{opacity:.45;cursor:not-allowed}
+input[type=range]{width:100%;accent-color:var(--accent)}
+input[type=number],select{background:#111925;color:var(--text);border:1px solid #40516a;border-radius:8px;padding:9px;width:100%}
+label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.field{min-width:0}
+.beats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px auto 6px}
+.lamp{width:17px;height:17px;border-radius:50%;background:#394557;box-shadow:inset 0 0 0 2px #56647a}
+.lamp.active{background:var(--green);box-shadow:0 0 18px #42d6ad99}
+.lamp.down{background:var(--orange);box-shadow:0 0 20px #ffb454aa}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row>*{flex:1}
+.section-title{font-weight:750;margin:0 0 16px;font-size:17px}
+.check{display:flex;align-items:center;gap:9px;color:var(--text);font-size:14px}
+.check input{accent-color:var(--accent);width:17px;height:17px}
+.hint{color:var(--muted);font-size:12px;line-height:1.6}
+.status{text-align:center;color:var(--muted);font-size:13px;min-height:22px;margin-top:10px}
+.progress-track{height:8px;background:#101925;border-radius:9px;overflow:hidden;margin-top:12px}
+#progress{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .15s}
+footer{text-align:center;color:#77869b;font-size:12px;padding:12px}
+@media(max-width:650px){body{padding:12px}.panel{padding:17px}.grid{grid-template-columns:repeat(2,1fr)}.tempo-controls button{padding:9px 12px}}
+
+/* IMWENT STUDIO — premium visual refresh */
+:root{
+  color-scheme:dark;
+  --bg:#090b0f;--panel:#11151c;--panel2:#1a202a;
+  --text:#f4f1eb;--muted:#929aa6;
+  --accent:#d7a85b;--green:#a8c7a0;--orange:#e8b86b;--red:#b96b63;
+}
+body{
+  padding:clamp(16px,3.4vw,42px);
+  background:
+    radial-gradient(ellipse at 50% -18%,rgba(188,139,69,.18),transparent 43%),
+    radial-gradient(ellipse at 90% 50%,rgba(77,91,111,.12),transparent 38%),
+    #090b0f;
+  letter-spacing:.01em;
+}
+main{max-width:960px}
+header{
+  text-align:left;position:relative;margin:4px 0 28px;
+  padding:10px 2px 22px;border-bottom:1px solid rgba(215,168,91,.22);
+}
+.brand-mark{margin:0 0 24px;align-items:center}
+.brand-mark img{width:min(198px,52vw);filter:brightness(0) invert(1);opacity:.94}
+header .eyebrow{
+  color:var(--accent);font-size:10px;letter-spacing:3.4px;
+  font-weight:750;text-transform:uppercase;margin-bottom:9px;
+}
+h1{font-size:clamp(27px,4.5vw,39px);font-weight:760;letter-spacing:.015em;margin:0 0 8px}
+header p{font-size:13px;letter-spacing:.08em;color:#9ca3ad}
+.panel{
+  background:linear-gradient(145deg,rgba(22,27,36,.97),rgba(14,18,24,.98));
+  border:1px solid rgba(180,190,205,.13);border-radius:17px;
+  padding:clamp(18px,3vw,28px);margin:16px 0;
+  box-shadow:0 18px 55px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.tempo{
+  position:relative;overflow:hidden;text-align:center;
+  padding:clamp(26px,5vw,44px) 20px 25px;
+  border-color:rgba(215,168,91,.3);
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(215,168,91,.12),transparent 58%),
+    linear-gradient(145deg,#171b22,#10141a 70%);
+}
+.tempo:before{
+  content:"TEMPO CONTROL";position:absolute;top:17px;left:22px;
+  color:rgba(215,168,91,.72);font-size:9px;font-weight:800;letter-spacing:2.8px;
+}
+#bpm{
+  font-size:clamp(76px,15vw,116px);font-weight:750;line-height:1;
+  letter-spacing:-.065em;color:#f6f0e5;
+  text-shadow:0 5px 32px rgba(215,168,91,.12);
+  font-variant-numeric:tabular-nums;
+}
+.unit{color:var(--accent);font-size:11px;font-weight:750;letter-spacing:5px;margin:10px 0 18px}
+.tempo-controls{gap:8px;margin:20px auto 17px;flex-wrap:wrap}
+button{
+  border:1px solid rgba(179,190,207,.17);background:linear-gradient(180deg,#222a35,#181e27);
+  color:#e8eaf0;border-radius:9px;padding:10px 16px;
+  font-size:13px;font-weight:650;letter-spacing:.025em;
+  box-shadow:0 3px 10px rgba(0,0,0,.16);
+  transition:background .18s,border-color .18s,transform .18s,box-shadow .18s;
+}
+button:hover{
+  filter:none;background:#2a303a;border-color:rgba(215,168,91,.65);
+  box-shadow:0 5px 18px rgba(0,0,0,.24);
+}
+button:active{transform:translateY(1px)}
+button.primary{
+  background:linear-gradient(135deg,#d6aa62,#a97938);color:#17130d;
+  border:1px solid #e5c17f;min-width:210px;padding:14px 24px;
+  font-size:14px;letter-spacing:.08em;box-shadow:0 8px 26px rgba(180,128,56,.2);
+}
+button.primary:hover{background:linear-gradient(135deg,#e5bd7b,#bd8c4b);border-color:#f1d49b}
+button.stop{background:linear-gradient(135deg,#a85850,#713b39);color:#fff;border-color:#c17a70}
+input[type=range]{accent-color:var(--accent);cursor:pointer}
+input[type=number],select{
+  background:#0c1016;color:#eeeae2;border:1px solid #303946;
+  border-radius:9px;padding:11px 12px;min-height:42px;
+}
+input[type=number]:focus,select:focus{outline:1px solid rgba(215,168,91,.7);border-color:var(--accent)}
+label{color:#aab1bc;font-size:12px;letter-spacing:.025em;margin-bottom:9px}
+.grid{gap:18px 16px}
+.field{padding:2px 0}
+.beats{gap:12px;margin:22px auto 7px}
+.lamp{width:12px;height:12px;background:#303844;box-shadow:inset 0 0 0 1px #4b5665}
+.lamp.active{background:#a8c7a0;box-shadow:0 0 16px rgba(168,199,160,.55)}
+.lamp.down{background:var(--accent);box-shadow:0 0 19px rgba(215,168,91,.65)}
+.status{color:#aeb5bf;font-size:12px;letter-spacing:.035em;margin-top:13px}
+.section-title{
+  font-size:14px;letter-spacing:.11em;text-transform:uppercase;
+  color:#e8d2ad;margin:0 0 21px;padding-bottom:13px;
+  border-bottom:1px solid rgba(215,168,91,.16);
+}
+.check{color:#e6e7e9;font-size:13px}
+.check input{accent-color:var(--accent)}
+.hint{color:#858e9b;font-size:11px;line-height:1.8;margin:18px 0 0}
+.progress-track{height:6px;background:#090d12;border:1px solid #252d37;border-radius:20px;margin-top:18px}
+#progress{background:linear-gradient(90deg,#a97938,#e4bd78);border-radius:20px}
+.row{gap:10px}
+.row button{flex:0 1 auto}
+footer{
+  color:#717b88;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  padding:20px 8px 8px;border-top:1px solid rgba(215,168,91,.13);margin-top:28px;
+}
+@media(max-width:650px){
+  body{padding:14px}
+  header{margin-bottom:20px}
+  .panel{padding:18px;border-radius:14px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .tempo-controls button{padding:9px 12px}
+  button.primary{min-width:190px}
+}
+@media(max-width:390px){
+  .grid{grid-template-columns:1fr}
+  .tempo-controls{gap:6px}
+}
+
+
+/* Circular, draggable tempo control */
+.dial-wrap{display:flex;justify-content:center;align-items:center;padding:12px 0 8px}
+.tempo-dial{
+  --dial-progress:90deg;--dial-angle:0deg;
+  position:relative;width:clamp(220px,62vw,286px);aspect-ratio:1;
+  border-radius:50%;display:grid;place-items:center;cursor:grab;
+  touch-action:none;user-select:none;outline:none;
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.38));
+}
+.tempo-dial:active{cursor:grabbing}
+.tempo-dial:focus-visible{outline:2px solid rgba(215,168,91,.75);outline-offset:8px}
+.dial-ring{
+  position:absolute;inset:0;border-radius:50%;
+  pointer-events:none;              /* 透明环曾经整块盖在数字上，把点击吃掉了 */
+  background:conic-gradient(from 225deg,
+    #d7a85b 0deg,
+    #e8c487 var(--dial-progress),
+    #303640 var(--dial-progress),
+    #303640 270deg,
+    transparent 270deg 360deg);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));
+  mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));
+}
+.dial-ring:after{
+  content:"";position:absolute;inset:13px;border-radius:50%;
+  border:1px solid rgba(215,168,91,.10);
+}
+.dial-center{
+  position:relative;z-index:2;
+  width:76%;height:76%;border-radius:50%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 28%,#242831 0,#171b22 58%,#101318 100%);
+  border:1px solid rgba(215,168,91,.18);
+  box-shadow:inset 0 3px 18px rgba(0,0,0,.45),0 0 24px rgba(215,168,91,.06);
+  pointer-events:none;
+}
+#bpm{
+  font-size:clamp(58px,13vw,82px);font-weight:760;line-height:1;letter-spacing:-.055em;color:#f5efe5;
+  pointer-events:auto;
+}
+/* 可直接输入数字的 BPM 框 */
+.bpm-input{
+  background:transparent;border:0;outline:none;padding:0;margin:0;
+  width:3ch;min-width:0;text-align:center;font:inherit;color:inherit;
+  -webkit-appearance:none;appearance:none;border-radius:0;cursor:text;
+  -webkit-user-select:text;user-select:text;
+}
+.bpm-input:focus{outline:none;color:#fff4de;text-shadow:0 0 22px rgba(215,168,91,.55);caret-color:var(--accent)}
+.tempo .unit{color:#d7a85b;font-size:11px;font-weight:750;letter-spacing:4px;margin:9px 0 0}
+.dial-caption{font-size:8px;letter-spacing:2px;color:#7f8792;margin-top:12px}
+.dial-knob{
+  position:absolute;left:50%;top:50%;width:19px;height:19px;border-radius:50%;
+  margin:-9.5px 0 0 -9.5px;z-index:3;
+  background:radial-gradient(circle at 35% 30%,#fff0c9,#d7a85b 55%,#91672e);
+  border:2px solid #f2d9a9;box-shadow:0 0 0 5px rgba(215,168,91,.13),0 2px 10px #0009;
+  transform:rotate(var(--dial-angle)) translateY(calc(clamp(220px,62vw,286px) * -.5 + 3px));
+  pointer-events:none;
+}
+.tempo-controls{margin:20px 0 14px}
+#tap{border-color:rgba(215,168,91,.5);color:#e8c487}
+@media(max-width:420px){
+  .dial-wrap{padding:7px 0 2px}
+  .tempo-controls{gap:6px}
+  .tempo-controls button{padding:9px 10px;font-size:12px}
+}
+
+
+/* Practice interval timer */
+.timer-panel{border-color:rgba(215,168,91,.24);background:linear-gradient(145deg,rgba(25,28,34,.98),rgba(14,17,22,.98))}
+.timer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.timer-kicker{font-size:9px;letter-spacing:2.5px;color:var(--accent);font-weight:800}
+.timer-display{font-size:clamp(48px,10vw,70px);font-weight:760;line-height:1.1;letter-spacing:-.045em;text-align:center;font-variant-numeric:tabular-nums;color:#f5efe5;margin:16px 0 6px}
+.timer-caption{text-align:center;color:#8d96a2;font-size:10px;letter-spacing:2px}
+.timer-presets{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:18px 0}
+.timer-presets button{min-width:76px;border-radius:999px;padding:9px 16px}
+.timer-presets button.selected{background:rgba(215,168,91,.16);border-color:var(--accent);color:#f0d29d}
+.timer-custom{display:flex;align-items:end;gap:10px;max-width:360px;margin:0 auto 16px}
+.timer-custom .field{flex:1}
+.timer-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.timer-actions .primary{min-width:140px}
+.timer-stats{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;color:#aeb5bf;font-size:12px;margin-top:18px}
+.timer-stats strong{color:#e8c487;font-variant-numeric:tabular-nums}
+.timer-track{height:5px;background:#090d12;border-radius:20px;overflow:hidden;margin:15px 0 0}
+#timerProgress{height:100%;width:0;background:linear-gradient(90deg,#a97938,#e4bd78);transition:width .2s linear}
+.timer-options{display:flex;justify-content:center;margin-top:14px}
+@media(max-width:420px){.timer-custom{max-width:none}.timer-presets{gap:6px}.timer-presets button{min-width:68px;padding:8px 12px}}
+
+
+/* Beat + subdivision visualizer */
+.beats{gap:13px;margin:24px auto 8px;min-height:86px;align-items:flex-start;flex-wrap:wrap}
+.beat-unit{display:flex;flex-direction:column;align-items:center;gap:9px;min-width:44px}
+.lamp{
+  --beat-color:#d7a85b;width:48px;height:43px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  color:color-mix(in srgb,var(--beat-color) 70%,white);font-size:15px;font-weight:800;
+  background:color-mix(in srgb,var(--beat-color) 17%,#151a22);
+  border:1px solid color-mix(in srgb,var(--beat-color) 43%,#303844);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  transition:transform .1s ease,background .1s ease,box-shadow .1s ease,border-color .1s ease;
+}
+.beat-unit:nth-child(1) .lamp{--beat-color:#e3b568}
+.beat-unit:nth-child(2) .lamp{--beat-color:#65b8e8}
+.beat-unit:nth-child(3) .lamp{--beat-color:#83c99b}
+.beat-unit:nth-child(4) .lamp{--beat-color:#b49ae8}
+.beat-unit:nth-child(5) .lamp{--beat-color:#e58c78}
+.beat-unit:nth-child(6) .lamp{--beat-color:#d58ebd}
+.beat-unit:nth-child(7) .lamp{--beat-color:#9eb8d8}
+.beat-unit:nth-child(8) .lamp{--beat-color:#d0c477}
+.lamp.active,.lamp.down{color:#101318;background:var(--beat-color);border-color:var(--beat-color);transform:scale(1.1);box-shadow:0 0 20px color-mix(in srgb,var(--beat-color) 58%,transparent),inset 0 1px 0 #ffffff55}
+.lamp.down{transform:scale(1.15);box-shadow:0 0 25px color-mix(in srgb,var(--beat-color) 72%,transparent),inset 0 1px 0 #ffffff66}
+.subdivision-track{display:flex;justify-content:center;align-items:center;gap:3px;min-height:13px;max-width:100%;}
+.sub-lamp{width:7px;height:7px;flex:0 0 7px;border-radius:2px;background:#414955;border:1px solid #58616d;transition:transform .07s ease,background .07s ease,box-shadow .07s ease}
+.sub-lamp.active{background:var(--sub-color,#e3b568);border-color:var(--sub-color,#e3b568);transform:scale(1.45);box-shadow:0 0 8px color-mix(in srgb,var(--sub-color,#e3b568) 75%,transparent)}
+.sub-lamp.silent{opacity:.28;transform:scale(.78);border-style:dashed}
+.feel-help{font-size:11px;color:var(--muted);line-height:1.5;margin-top:7px}
+#swingControls{display:none}#swingControls.visible{display:block}
+.beat-unit:nth-child(2) .sub-lamp{--sub-color:#65b8e8}.beat-unit:nth-child(3) .sub-lamp{--sub-color:#83c99b}.beat-unit:nth-child(4) .sub-lamp{--sub-color:#b49ae8}
+.subdivision-caption{font-size:9px;color:#737d8b;letter-spacing:.08em;white-space:nowrap}
+@media(max-width:520px){.beats{gap:10px}.beat-unit{min-width:40px}.lamp{width:42px;height:39px}.sub-lamp{width:6px;height:6px;flex-basis:6px;gap:2px}}
+
+
+.metronome-start-row{margin:14px 0 0;display:flex;justify-content:center;}
+.metronome-start-row #start{width:100%;min-height:50px;border-radius:12px;font-size:14px;font-weight:700;letter-spacing:.04em;}
+
+/* 9:16 portrait-first mobile layout */
+@media (max-width: 600px){
+  html{min-height:100%;background:#090b0f;}
+  body{
+    min-height:100svh;
+    padding:calc(10px + env(safe-area-inset-top)) 10px calc(18px + env(safe-area-inset-bottom));
+    overflow-x:hidden;
+    background:
+      radial-gradient(ellipse at 50% -12%,rgba(188,139,69,.2),transparent 42%),
+      #090b0f;
+  }
+  main{width:100%;max-width:430px;margin:0 auto;}
+  header{
+    text-align:center;margin:0 0 12px;padding:5px 4px 13px;
+  }
+  .brand-mark{justify-content:center;margin:0 0 10px;}
+  .brand-mark img{width:132px;max-width:42vw;}
+  header .eyebrow{font-size:8px;letter-spacing:2px;margin-bottom:6px;}
+  h1{font-size:23px;line-height:1.2;margin:0 0 5px;}
+  header p{font-size:9px;letter-spacing:.055em;line-height:1.4;}
+  .panel{
+    padding:14px 13px;margin:10px 0;border-radius:14px;
+    box-shadow:0 10px 28px rgba(0,0,0,.25);
+  }
+  .tempo{padding:20px 12px 13px;}
+  .tempo:before{top:10px;left:13px;font-size:7px;letter-spacing:2px;}
+  .dial-wrap{padding:7px 0 0;}
+  .tempo-dial{width:min(64vw,226px);}
+  #bpm{font-size:clamp(58px,17vw,76px);}
+  .tempo .unit{font-size:9px;letter-spacing:3px;margin-top:6px;}
+  .dial-caption{font-size:7px;margin-top:8px;}
+  .dial-knob{width:16px;height:16px;margin:-8px 0 0 -8px;}
+  .tempo-controls{display:grid;grid-template-columns:56px minmax(0,1fr) 56px;gap:9px;margin:13px 0 10px;align-items:stretch;}
+  .tempo-controls button{min-width:0;width:100%;min-height:42px;padding:8px 4px;font-size:16px;letter-spacing:0;border-radius:10px;white-space:nowrap;}
+  .tempo-controls #tap{font-size:11px;letter-spacing:1.5px;}
+  .beats{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    justify-items:center;align-items:start;gap:12px 5px;
+    width:100%;margin:15px auto 5px;min-height:0;
+  }
+  .beat-unit{width:100%;min-width:0;gap:7px;}
+  .lamp{width:min(100%,54px);height:39px;border-radius:8px;font-size:14px;}
+  .subdivision-track{width:100%;min-height:12px;gap:2px;overflow:visible;}
+  .sub-lamp{width:5px;height:5px;flex:0 1 5px;min-width:3px;border-radius:1.5px;}
+  .sub-lamp.active{transform:scale(1.55);}
+  .status{font-size:10px;line-height:1.45;margin-top:9px;min-height:16px;}
+  .timer-head{align-items:flex-start;gap:5px;flex-direction:column;}
+  .section-title{font-size:12px;letter-spacing:.08em;margin-bottom:13px;padding-bottom:9px;}
+  .timer-kicker{font-size:7px;letter-spacing:1.8px;}
+  .timer-display{font-size:clamp(43px,13vw,58px);margin:10px 0 2px;}
+  .timer-caption{font-size:8px;letter-spacing:1.4px;}
+  .timer-presets{gap:7px;margin:12px 0;}
+  .timer-presets button{flex:1;min-width:0;padding:9px 5px;font-size:11px;}
+  .timer-custom{gap:7px;margin-bottom:10px;}
+  .timer-custom .field{min-width:0;}
+  .timer-custom button{padding:9px 12px;}
+  .timer-actions{gap:7px;margin-top:9px;}
+  .timer-actions button{flex:1;padding:11px 7px;font-size:11px;}
+  .timer-actions .primary{min-width:0;}
+  .timer-stats{gap:18px;font-size:10px;margin-top:12px;}
+  .timer-options{justify-content:flex-start;margin-top:10px;}
+  .timer-options .check{font-size:10px;line-height:1.4;}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px;}
+  .field{min-width:0;}
+  label{font-size:10px;line-height:1.4;margin-bottom:6px;}
+  input[type=number],select{min-height:40px;padding:8px 9px;font-size:12px;width:100%;}
+  input[type=range]{min-height:28px;}
+  .check{font-size:11px;line-height:1.45;}
+  .check input{flex:0 0 auto;width:16px;height:16px;}
+  .feel-help{font-size:9px;line-height:1.45;}
+  .hint{font-size:9px;line-height:1.6;margin-top:12px;}
+  .row{gap:7px;}
+  .row button{font-size:10px;padding:9px 7px;}
+  .metronome-start-row{margin-top:12px;}
+  .metronome-start-row #start{min-height:50px;font-size:13px;}
+  footer{font-size:8px;padding:14px 5px 8px;margin-top:16px;}
+}
+@media (max-width:360px){
+  .panel{padding:12px 10px;}
+  .tempo-dial{width:min(62vw,205px);}
+  .beats{gap:10px 3px;}
+  .lamp{height:35px;}
+  .tempo-controls button{font-size:9px;padding:8px 1px;}
+  .grid{gap:10px 8px;}
+}
+
+
+/* Larger, polished beat + subdivision display for phone screens */
+@media(max-width:600px){
+  .beats{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;width:100%;margin:17px auto 8px;padding:2px;
+    align-items:stretch;justify-items:stretch;
+  }
+  .beat-unit{
+    --beat-color:#e3b568;position:relative;min-width:0;width:100%;min-height:100px;
+    padding:10px 9px 11px;gap:10px;display:flex;flex-direction:column;
+    justify-content:center;align-items:stretch;border-radius:15px;
+    border:1px solid color-mix(in srgb,var(--beat-color) 25%,#343b45);
+    background:linear-gradient(145deg,color-mix(in srgb,var(--beat-color) 9%,#171b22),#10141a 82%);
+    box-shadow:inset 0 1px 0 #ffffff08,0 7px 18px #0003;
+    transition:border-color .12s ease,background .12s ease,box-shadow .12s ease,transform .12s ease;
+  }
+  .beat-unit:nth-child(1){--beat-color:#e3b568}
+  .beat-unit:nth-child(2){--beat-color:#65b8e8}
+  .beat-unit:nth-child(3){--beat-color:#83c99b}
+  .beat-unit:nth-child(4){--beat-color:#b49ae8}
+  .beat-unit:nth-child(5){--beat-color:#e58c78}
+  .beat-unit:nth-child(6){--beat-color:#d58ebd}
+  .beat-unit:nth-child(7){--beat-color:#9eb8d8}
+  .beat-unit:nth-child(8){--beat-color:#d0c477}
+  .beat-unit.current{
+    border-color:color-mix(in srgb,var(--beat-color) 76%,white);
+    background:linear-gradient(145deg,color-mix(in srgb,var(--beat-color) 18%,#1b2028),#11151c 82%);
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--beat-color) 22%,transparent),0 0 22px color-mix(in srgb,var(--beat-color) 22%,transparent),inset 0 1px 0 #ffffff12;
+    transform:translateY(-1px);
+  }
+  .lamp{
+    width:100%;height:49px;min-height:49px;border-radius:10px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;
+    color:color-mix(in srgb,var(--beat-color) 78%,white);
+    background:color-mix(in srgb,var(--beat-color) 12%,#12161d);
+    border:1px solid color-mix(in srgb,var(--beat-color) 32%,#343b45);
+    font-size:27px;line-height:1;font-weight:850;letter-spacing:-.04em;
+    box-shadow:inset 0 1px 0 #ffffff0a;
+  }
+  .lamp::before{content:'BEAT';font-size:7px;line-height:1;letter-spacing:2px;font-weight:750;opacity:.68;margin-bottom:4px}
+  .lamp.active,.lamp.down{color:#111318;background:var(--beat-color);border-color:var(--beat-color);transform:scale(1.025);box-shadow:0 0 20px color-mix(in srgb,var(--beat-color) 48%,transparent),inset 0 1px 0 #ffffff66}
+  .lamp.down{transform:scale(1.04);box-shadow:0 0 25px color-mix(in srgb,var(--beat-color) 66%,transparent),inset 0 1px 0 #ffffff77}
+  .subdivision-track{width:100%;min-height:15px;display:flex;justify-content:center;align-items:center;gap:clamp(2px,1vw,4px);overflow:visible;padding:1px 0}
+  .sub-lamp{width:clamp(6px,2vw,9px);height:clamp(6px,2vw,9px);flex:0 1 clamp(6px,2vw,9px);min-width:4px;border-radius:3px;border:1px solid #59616c;background:#3a424d;transition:transform .07s ease,background .07s ease,box-shadow .07s ease,opacity .07s ease}
+  .sub-lamp.active{transform:scale(1.55);box-shadow:0 0 11px color-mix(in srgb,var(--sub-color,#e3b568) 82%,transparent)}
+  .sub-lamp.silent{opacity:.22;transform:scale(.8);border-style:dashed}
+  .status{font-size:11px;margin-top:11px;min-height:18px;letter-spacing:.02em}
+}
+@media(max-width:360px){
+  .beats{gap:9px}
+  .beat-unit{min-height:91px;padding:8px 7px;gap:8px;border-radius:12px}
+  .lamp{height:44px;min-height:44px;font-size:24px}
+  .subdivision-track{gap:2px}
+}
+
+
+/* IMWENT mobile visual upgrade v2: oversized beat cards and subdivision blocks */
+@media(max-width:600px){
+  .beats{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:15px 12px !important;
+    margin:22px auto 12px !important;
+    padding:3px !important;
+  }
+  .beat-unit{
+    min-height:148px !important;
+    padding:14px 12px 13px !important;
+    gap:14px !important;
+    border-radius:19px !important;
+    border-width:1.5px !important;
+    box-shadow:inset 0 1px 0 #ffffff12,0 9px 22px #0005 !important;
+  }
+  .beat-unit.current{
+    transform:translateY(-3px) scale(1.015) !important;
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--beat-color) 35%,transparent),
+      0 0 30px color-mix(in srgb,var(--beat-color) 35%,transparent),
+      inset 0 1px 0 #ffffff20 !important;
+  }
+  .lamp{
+    height:72px !important; min-height:72px !important;
+    border-radius:13px !important;
+    font-size:43px !important; font-weight:900 !important;
+    letter-spacing:-.06em !important;
+  }
+  .lamp::before{font-size:8px !important;letter-spacing:2.6px !important;margin-bottom:5px !important}
+  .lamp.active,.lamp.down{transform:scale(1.045) !important;filter:brightness(1.13)}
+  .lamp.down{transform:scale(1.065) !important}
+  .subdivision-track{
+    display:flex !important;flex-wrap:wrap !important;
+    justify-content:center !important;align-content:center !important;
+    gap:5px !important;min-height:22px !important;
+    padding:2px 0 !important;overflow:visible !important;
+  }
+  .sub-lamp{
+    width:11px !important;height:11px !important;flex:0 0 11px !important;
+    min-width:11px !important;border-radius:3px !important;
+    border:1px solid #66717f !important;
+    background:linear-gradient(145deg,#515c6a,#303945) !important;
+    box-shadow:inset 0 1px 0 #ffffff18 !important;
+  }
+  .sub-lamp.active{
+    transform:scale(1.42) !important;
+    background:var(--sub-color,#e3b568) !important;
+    border-color:var(--sub-color,#e3b568) !important;
+    box-shadow:0 0 0 2px color-mix(in srgb,var(--sub-color,#e3b568) 20%,transparent),
+      0 0 15px color-mix(in srgb,var(--sub-color,#e3b568) 90%,transparent) !important;
+  }
+  .sub-lamp.silent{opacity:.2 !important;transform:scale(.82) !important;border-style:dashed !important}
+  .status{font-size:12px !important;min-height:21px !important;margin-top:13px !important}
+}
+@media(max-width:360px){
+  .beats{gap:11px 9px !important}
+  .beat-unit{min-height:132px !important;padding:11px 9px !important}
+  .lamp{height:63px !important;min-height:63px !important;font-size:38px !important}
+  .subdivision-track{gap:4px !important}
+  .sub-lamp{width:9px !important;height:9px !important;flex-basis:9px !important;min-width:9px !important}
+}
+
+
+/* Two-page information architecture */
+main{padding-bottom:96px}
+.app-page{display:none;animation:pageIn .22s ease both}
+.app-page.active{display:block}
+@keyframes pageIn{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.bottom-nav{
+  position:fixed;z-index:50;left:50%;bottom:max(14px,env(safe-area-inset-bottom));
+  transform:translateX(-50%);width:min(440px,calc(100% - 28px));
+  display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:7px;
+  border:1px solid rgba(215,168,91,.25);border-radius:18px;
+  background:rgba(15,18,24,.92);backdrop-filter:blur(18px);
+  box-shadow:0 12px 38px #0009,inset 0 1px 0 #ffffff0a;
+}
+.nav-item{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;
+  border:1px solid transparent;border-radius:12px;background:transparent;color:#929aa6;
+  font-size:13px;font-weight:750;letter-spacing:.06em;box-shadow:none}
+.nav-item:hover{background:#222832;border-color:rgba(215,168,91,.18)}
+.nav-item.active{color:#f2d39c;background:linear-gradient(135deg,rgba(215,168,91,.2),rgba(169,121,56,.08));
+  border-color:rgba(215,168,91,.42);box-shadow:inset 0 1px 0 #ffffff0d}
+.nav-icon{font-size:19px;line-height:1;color:#d7a85b}
+#pagePractice .timer-panel{margin-top:0}
+@media(min-width:700px){
+  main{max-width:760px;padding-bottom:105px}
+  .bottom-nav{bottom:22px}
+}
+@media(max-width:420px){
+  .nav-item{gap:6px;font-size:11px;letter-spacing:.03em}
+  .nav-icon{font-size:17px}
+}
+
+
+/* Guitar tuner (third page) */
+.tuner-panel{border-color:rgba(215,168,91,.26);background:linear-gradient(145deg,rgba(24,28,35,.98),rgba(13,16,21,.98))}
+.tuner-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tuner-kicker{font-size:9px;letter-spacing:2.5px;color:var(--accent);font-weight:800}
+.tuner-modes{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:18px 0 6px}
+.tuner-modes button{min-width:104px;border-radius:999px;padding:9px 18px}
+.tuner-modes button.selected{background:rgba(215,168,91,.16);border-color:var(--accent);color:#f0d29d}
+
+.tuner-stage{
+  position:relative;margin:14px 0 0;padding:20px 14px 14px;border-radius:16px;
+  border:1px solid rgba(180,190,205,.12);
+  background:radial-gradient(ellipse at 50% 0%,rgba(215,168,91,.1),transparent 60%),linear-gradient(160deg,#151a21,#0c1015);
+  transition:border-color .2s,box-shadow .2s;
+}
+.tuner-stage.in-tune{border-color:rgba(168,199,160,.5);box-shadow:inset 0 0 32px rgba(168,199,160,.08)}
+/* 没在监听时整块变暗，停止调音后不会留下亮着的琴弦和读数 */
+.tuner-strings,.tuner-readout,.tuner-meter{transition:opacity .28s ease}
+.tuner-stage.idle .tuner-strings,.tuner-stage.idle .tuner-readout,.tuner-stage.idle .tuner-meter{opacity:.32}
+.tuner-strings{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2.6vw,18px);min-height:88px}
+.string-col{
+  flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:9px;
+  padding:4px 2px;border:0;border-radius:10px;background:none;box-shadow:none;
+  cursor:pointer;opacity:.7;transition:opacity .18s,transform .18s;
+}
+.string-col:hover{opacity:1;transform:translateY(-1px);filter:none;background:none;border:0;box-shadow:none}
+.string-line{
+  width:100%;border-radius:999px;
+  background:linear-gradient(180deg,#59636f,#242b33);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05),0 1px 6px rgba(0,0,0,.4);
+  transition:background .16s,box-shadow .16s;
+}
+.string-chip{font-size:10px;font-weight:750;letter-spacing:.12em;color:#8d96a2;white-space:nowrap}
+.string-col.tuned .string-line{background:linear-gradient(180deg,#d9ecd2,#4f7f48);box-shadow:0 0 12px rgba(168,199,160,.45)}
+.string-col.tuned .string-chip{color:#a9cd9f}
+.string-col.active{opacity:1}
+.string-col.active .string-line{background:linear-gradient(180deg,#f2d9a9,#a97938);box-shadow:0 0 16px rgba(215,168,91,.55)}
+.string-col.active .string-chip{color:#f0d29d}
+.string-col.in-tune .string-line{background:linear-gradient(180deg,#cfe6c7,#5d8a55);box-shadow:0 0 18px rgba(168,199,160,.6)}
+.string-col.in-tune .string-chip{color:#b6d6ad}
+
+.tuner-readout{position:relative;text-align:center;margin:20px 0 2px}
+.tuner-note-wrap{position:relative;display:inline-block;vertical-align:top}
+.tuner-note{font-size:clamp(54px,15vw,78px);font-weight:760;line-height:1;letter-spacing:-.05em;color:#f6f0e5;font-variant-numeric:tabular-nums}
+.tuner-note .oct{font-size:.32em;font-weight:600;color:#8d96a2;letter-spacing:.06em;margin-left:.1em}
+.tuner-cents{margin-top:9px;font-size:12px;letter-spacing:.16em;color:#aeb5bf;font-weight:650}
+.tuner-cents.tight{color:#b6d6ad}
+.tune-hold{
+  margin-top:10px;font-size:11px;letter-spacing:.16em;font-weight:700;color:#b6d6ad;
+  font-variant-numeric:tabular-nums;transition:color .2s,opacity .2s;
+}
+.tune-hold b{font-size:15px;font-weight:760;letter-spacing:.02em;color:#d5eccb}
+.tune-hold.stopped{color:#77808d}
+.tune-hold.stopped b{color:#8d96a2}
+.tuner-meter{position:relative;height:62px;margin:16px auto 0;max-width:430px}
+.meter-track{
+  position:absolute;left:0;right:0;top:30px;height:4px;border-radius:9px;
+  background:linear-gradient(90deg,rgba(185,107,99,.55),rgba(110,120,134,.4) 42%,rgba(168,199,160,.75) 50%,rgba(110,120,134,.4) 58%,rgba(185,107,99,.55));
+}
+.meter-center{position:absolute;left:50%;top:24px;width:2px;height:34px;margin-left:-1px;border-radius:2px;background:rgba(168,199,160,.85);box-shadow:0 0 8px rgba(168,199,160,.5)}
+.meter-needle{
+  position:absolute;left:50%;top:21px;width:3px;height:22px;margin-left:-1.5px;border-radius:2px;
+  background:#f2d9a9;box-shadow:0 0 14px rgba(215,168,91,.85);
+  transition:left .09s ease-out,background .2s,box-shadow .2s;
+}
+.meter-needle.tight{background:#bfe0b4;box-shadow:0 0 16px rgba(168,199,160,.9)}
+.meter-scale{position:absolute;left:0;right:0;top:44px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.1em;color:#6f7987}
+.tuner-freqs{text-align:center;font-size:10px;letter-spacing:.14em;color:#8d96a2;margin-top:6px;font-variant-numeric:tabular-nums}
+.tuner-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.tuner-actions .primary{min-width:190px}
+.tuner-auto{display:flex;justify-content:center;margin-top:16px}
+
+@media(max-width:600px){
+  .tuner-modes{gap:7px;margin:14px 0 4px}
+  .tuner-modes button{flex:1;min-width:0;padding:9px 8px;font-size:12px}
+  .tuner-stage{padding:16px 10px 12px}
+  .tuner-strings{gap:6px;min-height:78px}
+  .string-chip{font-size:9px;letter-spacing:.05em}
+  .tuner-note{font-size:clamp(46px,15vw,64px)}
+  .tuner-cents{font-size:11px}
+  .tuner-actions .primary{min-width:0;flex:1}
+  .tuner-tuning{flex-direction:column;align-items:stretch;gap:12px}
+  .tuner-tuning .field,.tuner-tuning .field.narrow{flex:1 1 auto;width:100%}
+  .tr-name{font-size:11.5px}
+  .nb{min-width:25px;height:20px;font-size:9px;padding:0 4px}
+  .tune-menu{max-height:58vh}
+}
+
+
+/* Instrument / tuning selectors + custom tuning editor */
+.tuner-modes.sub{margin-top:10px}
+.tuner-modes.sub button{min-width:0;padding:7px 15px;font-size:12px;font-weight:700;border-radius:9px;letter-spacing:.02em}
+.tuner-tuning{display:flex;gap:10px;align-items:flex-end;margin:18px 0 2px;flex-wrap:wrap}
+.tuner-tuning .field{flex:1 1 220px;min-width:0}
+.tuner-tuning .field.narrow{flex:0 0 132px}
+
+/* 调音方案选择器：调名 + 6 个方形音块 */
+.tune-picker-wrap{position:relative}
+.tune-picker-btn{
+  display:flex;flex-direction:column;align-items:stretch;gap:8px;width:100%;
+  padding:10px 12px;text-align:left;border-radius:9px;
+  background:#0c1016;border:1px solid #303946;box-shadow:none;
+}
+.tune-picker-btn:hover{background:#0f141b;border-color:rgba(215,168,91,.6);filter:none}
+.tune-picker-btn.open{border-color:var(--accent)}
+/* 只有一种调音的乐器：不展开下拉，只当信息展示 */
+.tune-picker-btn.static{cursor:default;background:transparent;border-color:rgba(180,190,205,.12)}
+.tune-picker-btn.static:hover{background:transparent;border-color:rgba(180,190,205,.12);filter:none}
+.tune-picker-btn.static .tp-caret{display:none}
+.tp-top{display:flex;align-items:center;gap:10px;width:100%}
+.tp-name{flex:1;min-width:0;font-size:13px;font-weight:700;color:#eeeae2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tp-caret{font-size:10px;color:#8d96a2;transition:transform .18s}
+.tune-picker-btn.open .tp-caret{transform:rotate(180deg)}
+.note-chips{display:flex;flex-wrap:wrap;gap:4px}
+.nb{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:28px;height:22px;padding:0 6px;border-radius:5px;
+  background:#1b212a;border:1px solid #313a46;color:#ced6df;
+  font-size:10px;font-weight:650;font-style:normal;font-variant-numeric:tabular-nums;
+}
+.tune-menu{
+  position:absolute;z-index:40;left:0;right:0;top:calc(100% + 8px);
+  max-height:min(62vh,440px);overflow:auto;padding:6px 8px 10px;border-radius:14px;
+  border:1px solid rgba(215,168,91,.28);background:rgba(13,17,22,.985);
+  backdrop-filter:blur(16px);box-shadow:0 24px 54px #000b,inset 0 1px 0 #ffffff0a;
+}
+.tune-cat{font-size:9px;font-weight:800;letter-spacing:.18em;color:#948d7d;padding:12px 8px 6px}
+.tune-row{
+  display:flex;align-items:center;gap:12px;width:100%;padding:8px;
+  border:1px solid transparent;border-radius:9px;background:none;box-shadow:none;
+  cursor:pointer;text-align:left;min-height:0;
+}
+.tune-row:hover{background:#1a202a;border-color:rgba(215,168,91,.18);filter:none}
+.tune-row.selected{background:linear-gradient(135deg,rgba(215,168,91,.17),rgba(169,121,56,.07));border-color:rgba(215,168,91,.4)}
+.tr-name{flex:1;min-width:0;font-size:12.5px;font-weight:650;color:#e8eaf0}
+.tr-notes{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end;max-width:64%}
+.string-pair{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;height:64px}
+.string-chip.pair{font-size:8.5px;letter-spacing:.02em}
+
+/* 调准反馈：只打一个勾，不写字；放在音名右侧，绝不压住音符字母 */
+.tune-toast{
+  position:absolute;left:calc(100% + 10px);top:50%;
+  display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  color:#f4fff2;
+  background:linear-gradient(135deg,rgba(126,172,113,.97),rgba(64,106,58,.97));
+  border:1px solid rgba(213,242,203,.75);
+  box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 22px rgba(168,199,160,.38),inset 0 1px 0 rgba(255,255,255,.2);
+  opacity:0;pointer-events:none;z-index:6;
+  transform:translateY(-50%) scale(.45);
+  transition:opacity .12s ease,transform .2s cubic-bezier(.2,1.5,.4,1);
+}
+.tune-toast.show{opacity:1;transform:translateY(-50%) scale(1)}
+.tt-tick{font-size:20px;font-weight:800;line-height:1}
+@media(max-width:600px){
+  .tune-toast{left:calc(100% + 8px);width:31px;height:31px}
+  .tt-tick{font-size:17px}
+}
+.custom-strings{display:grid;gap:8px;margin-top:16px}
+.custom-row{
+  display:grid;grid-template-columns:68px 32px minmax(0,1fr) 32px 82px;align-items:center;gap:8px;
+  padding:7px 10px;border:1px solid rgba(180,190,205,.1);border-radius:10px;background:rgba(255,255,255,.015);
+}
+.custom-row .cs-name{font-size:10px;letter-spacing:.1em;color:#8d96a2;font-weight:750;white-space:nowrap}
+.cs-mid{display:flex;align-items:baseline;justify-content:center;gap:6px}
+.cs-note{font-size:13px;font-weight:750;color:#eceef2}
+.cs-off{font-size:10px;color:#8d96a2;font-variant-numeric:tabular-nums}
+.cs-off.up{color:#e8c487}
+.cs-off.down{color:#c98d84}
+.cs-freq{font-size:10px;color:#7f8792;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cs-step{width:32px;height:32px;min-height:0;padding:0;display:grid;place-items:center;font-size:15px;line-height:1;border-radius:8px;font-weight:700}
+@media(max-width:600px){
+  .tuner-modes.sub button{padding:7px 10px;font-size:11px}
+  .tuner-tuning{margin-top:14px;gap:8px}
+  .tuner-tuning .field.narrow{flex:0 0 108px}
+  .custom-row{grid-template-columns:62px 30px minmax(0,1fr) 30px 72px;gap:6px;padding:6px 8px}
+  .cs-step{width:30px;height:30px;font-size:14px}
+  .string-pair{height:56px;gap:5px}
+}
+
+
+/* Drum machine page */
+.drum-panel{border-color:rgba(215,168,91,.24)}
+.drum-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.drum-kicker{font-size:9px;letter-spacing:2.5px;color:var(--accent);font-weight:800}
+.drum-styles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:18px 0 4px}
+.drum-style{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:10px 6px;border-radius:10px;border:1px solid rgba(179,190,207,.16);
+  background:linear-gradient(180deg,#1a2029,#141a22);box-shadow:0 2px 8px #0002;cursor:pointer;
+}
+.drum-style:hover{background:linear-gradient(180deg,#1f2630,#171e27);border-color:rgba(215,168,91,.35);filter:none}
+.drum-style b{font-size:13px;font-weight:760;color:#e9ecf1;letter-spacing:.01em}
+.drum-style i{font-style:normal;font-size:9px;letter-spacing:.07em;color:#8d96a2;white-space:nowrap}
+.drum-style.selected{border-color:rgba(215,168,91,.75);background:linear-gradient(135deg,rgba(215,168,91,.24),rgba(169,121,56,.1))}
+.drum-style.selected b{color:#f6e3bd}
+.drum-style.selected i{color:#d9b887}
+.drum-controls{display:grid;gap:11px;margin:18px 0 2px}
+.drum-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.drum-label{font-size:11px;letter-spacing:.08em;color:#8d96a2;min-width:66px}
+.drum-chips{display:flex;gap:7px;flex-wrap:wrap;flex:1}
+.drum-chips button{padding:7px 15px;border-radius:999px;font-size:12px;min-width:0;border:1px solid rgba(179,190,207,.16);background:#161c24}
+.drum-chips button:hover{background:#1d242e;border-color:rgba(215,168,91,.4);filter:none}
+.drum-chips button.selected{background:rgba(215,168,91,.2);border-color:var(--accent);color:#f0d29d}
+/* 节奏/加花/间隔这些纯数字的按钮做得紧凑些，10 个也能排得下 */
+.drum-chips button.n{min-width:38px;padding:7px 0;text-align:center;font-variant-numeric:tabular-nums}
+.drum-transport{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+.drum-tempo{display:flex;align-items:center;gap:10px;flex:1;min-width:190px}
+.drum-step{width:38px;height:38px;padding:0;display:grid;place-items:center;font-size:16px;line-height:1;border-radius:9px}
+.drum-bpm{display:flex;align-items:baseline;gap:7px}
+.drum-bpm input{font-size:40px;font-weight:760;letter-spacing:-.04em;color:#f6f0e5;font-variant-numeric:tabular-nums;line-height:1}
+.drum-bpm i{font-style:normal;font-size:9px;letter-spacing:.2em;color:var(--accent);font-weight:750}
+.drum-transport .primary{min-width:150px}
+@media(max-width:600px){
+  .drum-styles{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:15px 0 2px}
+  .drum-style{padding:9px 3px}
+  .drum-style b{font-size:11px}
+  .drum-style i{font-size:8px;letter-spacing:.02em}
+  .drum-label{min-width:100%;font-size:10px}
+  .drum-line{gap:8px}
+  .drum-chips button{padding:6px 12px;font-size:11px}
+  .drum-chips button.n{min-width:32px;padding:6px 0}
+  .drum-bpm input{font-size:34px}
+  .drum-step{width:34px;height:34px}
+  .drum-transport .primary{flex:1;min-width:0}
+}
+
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand-mark"><img src="data:image/png;base64,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" alt="IMWENT STUDIO logo"></div>
+  <div class="eyebrow">IMWENT STUDIO  /  GUITAR PRACTICE SERIES</div>
+  <h1>专业吉他节拍器</h1>
+  <p>PRECISION TIMING · SUBDIVISION · PROGRESSIVE TRAINING</p>
+</header>
+
+<div class="app-page active" id="pageMetronome" data-page="metronome">
+<section class="panel tempo">
+  <div class="dial-wrap">
+    <div id="tempoDial" class="tempo-dial" role="slider" tabindex="0"
+         aria-label="圆形速度调节" aria-valuemin="30" aria-valuemax="300" aria-valuenow="120">
+      <div class="dial-ring"></div>
+      <div class="dial-knob" id="dialKnob"></div>
+      <div class="dial-center">
+        <input id="bpm" class="bpm-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" value="120" aria-label="BPM 速度，可直接输入数字">
+        <div class="unit">BPM</div>
+        <div class="dial-caption">DRAG TO ADJUST · 点数字输入</div>
+      </div>
+    </div>
+  </div>
+  <div class="tempo-controls">
+    <button id="minus" type="button" aria-label="速度减 1 BPM" title="速度减 1 BPM">−</button>
+    <button id="tap" type="button">TAP TEMPO</button>
+    <button id="plus" type="button" aria-label="速度加 1 BPM" title="速度加 1 BPM">+</button>
+  </div>
+  <div class="beats" id="beatLamps"></div>
+  <div class="status" id="status">准备就绪 · 空格键开始 / 停止</div>
+  <div class="metronome-start-row">
+    <button class="primary" id="start">▶ 开始</button>
+  </div>
+</section>
+
+<section class="panel">
+  <h2 class="section-title">节拍设置</h2>
+  <div class="grid">
+    <div class="field"><label for="numerator">拍号 · 每小节拍数</label><select id="numerator">
+      <option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+    </select></div>
+    <div class="field"><label for="denominator">拍号 · 拍值</label><select id="denominator"><option>2</option><option selected>4</option><option>8</option><option>16</option></select></div>
+    <div class="field"><label for="subdivision">节奏细分</label><select id="subdivision">
+      <option value="1">四分音符（每拍 1 下）</option>
+      <option value="2">八分音符（每拍 2 下）</option>
+      <option value="3">八分三连音（每拍 3 下）</option>
+      <option value="4" selected>十六分音符（每拍 4 下）</option>
+      <option value="5">五连音（每拍 5 下）</option>
+      <option value="6">六连音（每拍 6 下）</option>
+      <option value="7">七连音（每拍 7 下）</option>
+      <option value="8">三十二分音符（每拍 8 下）</option>
+      <option value="9">九连音（每拍 9 下）</option>
+      <option value="12">十二连音（每拍 12 下）</option>
+    </select></div>
+    <div class="field"><label for="feel">律动模式</label><select id="feel">
+      <option value="straight" selected>Straight · 直拍</option>
+      <option value="swing">Swing · 摇摆</option>
+      <option value="shuffle">Shuffle · 三连音律动</option>
+    </select><div class="feel-help" id="feelHelp">直拍：所有细分均匀间隔。</div></div>
+    <div class="field" id="swingControls"><label for="swingRatio">Swing 比例 <span id="swingValue">66%</span></label><input id="swingRatio" type="range" min="50" max="75" value="66"><div class="feel-help">控制每组两拍细分的长短比例。50% 为均匀，66% 接近三连音摇摆。</div></div>
+    <div class="field"><label for="volume">音量</label><input id="volume" type="range" min="0" max="100" value="65"></div>
+    <div class="field"><label for="accent">第一拍重音</label><select id="accent"><option value="on" selected>开启</option><option value="off">关闭</option></select></div>
+    <div class="field"><label for="tone">音色</label><select id="tone"><option value="wood" selected>清脆木鱼</option><option value="beep">电子提示音</option></select></div>
+  </div>
+  <p class="hint">提示：每拍上方的彩色方块表示当前拍号，下方小方块表示这一拍的细分位置。声音与图形同步闪动；第一拍使用更高音量和不同音高提示。</p>
+</section>
+
+</div>
+<div class="app-page" id="pagePractice" data-page="practice">
+<section class="panel timer-panel">
+  <div class="timer-head">
+    <h2 class="section-title" style="margin:0;border:0;padding:0">分阶段练习倒计时</h2>
+    <span class="timer-kicker">PRACTICE INTERVAL TIMER</span>
+  </div>
+  <div class="timer-display" id="timerDisplay">05:00</div>
+  <div class="timer-caption" id="timerCaption">READY FOR YOUR NEXT PRACTICE BLOCK</div>
+  <div class="timer-presets" id="timerPresets">
+    <button type="button" data-minutes="3">3 分钟</button>
+    <button type="button" data-minutes="5" class="selected">5 分钟</button>
+    <button type="button" data-minutes="10">10 分钟</button>
+  </div>
+  <div class="timer-custom">
+    <div class="field"><label for="customMinutes">自定义时长（分钟）</label><input id="customMinutes" type="number" min="1" max="180" value="5"></div>
+    <button type="button" id="applyCustomTimer">应用</button>
+  </div>
+  <div class="timer-actions">
+    <button type="button" class="primary" id="timerStart">▶ 训练开始</button>
+    <button type="button" id="timerReset">↺ 重置</button>
+  </div>
+  <div class="timer-track"><div id="timerProgress"></div></div>
+  <div class="timer-options"><label class="check"><input id="autoNextTimer" type="checkbox"> 阶段结束后自动开始下一阶段</label></div>
+  <div class="timer-stats">
+    <span>完成阶段 <strong id="timerStages">0</strong></span>
+    <span>累计练习 <strong id="timerTotal">00:00</strong></span>
+  </div>
+  <div class="status" id="timerStatus" aria-live="polite">选择 3、5 或 10 分钟，开始一个练习阶段</div>
+</section>
+
+<section class="panel">
+  <h2 class="section-title">渐进速度训练</h2>
+  <div class="grid">
+    <div class="field"><label for="startBpm">起始速度 BPM</label><input id="startBpm" type="number" min="30" max="300" value="100"></div>
+    <div class="field"><label for="targetBpm">目标速度 BPM</label><input id="targetBpm" type="number" min="30" max="300" value="160"></div>
+    <div class="field"><label for="stepBpm">每阶段增加 BPM</label><input id="stepBpm" type="number" min="1" max="20" value="2"></div>
+    <div class="field"><label for="barsPerStep">每阶段持续小节数</label><input id="barsPerStep" type="number" min="1" max="100" value="4"></div>
+    <div class="field"><label for="restBars">阶段间休息小节数</label><input id="restBars" type="number" min="0" max="20" value="0"></div>
+    <div class="field"><label>训练模式</label><label class="check"><input id="progressive" type="checkbox" checked> 启用自动加速</label></div>
+  </div>
+  <div class="row" style="margin-top:15px">
+    <button id="applyTraining">应用起始速度</button>
+    <button id="resetTraining">重置训练进度</button>
+  </div>
+  <div class="progress-track"><div id="progress"></div></div>
+  <div class="status" id="trainingStatus">当前阶段：100 BPM · 0 / 4 小节</div>
+</section>
+
+</div>
+<div class="app-page" id="pageTuner" data-page="tuner">
+<section class="panel tuner-panel">
+  <div class="tuner-head">
+    <h2 class="section-title" style="margin:0;border:0;padding:0">调音器</h2>
+    <span class="tuner-kicker">GUITAR · BASS · UKULELE · STRINGS</span>
+  </div>
+
+  <div class="tuner-modes" id="tunerFamilies">
+    <button type="button" data-family="guitar" class="selected">吉他</button>
+    <button type="button" data-family="bass">贝司</button>
+    <button type="button" data-family="ukulele">尤克里里</button>
+    <button type="button" data-family="bowed">提琴</button>
+  </div>
+  <div class="tuner-modes sub" id="tunerModels"></div>
+
+  <div class="tuner-tuning">
+    <div class="field">
+      <label for="tunePickerBtn">调音方案</label>
+      <div class="tune-picker-wrap">
+        <button type="button" id="tunePickerBtn" class="tune-picker-btn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="tp-top"><span class="tp-name" id="tunePickerName">标准 E（原调）</span><span class="tp-caret">▾</span></span>
+          <span class="note-chips" id="tunePickerNotes"></span>
+        </button>
+        <div class="tune-menu" id="tuneMenu" role="listbox" hidden></div>
+      </div>
+    </div>
+    <div class="field narrow"><label for="refPitch">基准音 A4</label><select id="refPitch">
+      <option value="440" selected>440 Hz</option>
+      <option value="442">442 Hz</option>
+      <option value="435">435 Hz</option>
+      <option value="432">432 Hz</option>
+    </select></div>
+  </div>
+
+  <div class="tuner-stage idle" id="tunerStage">
+    <div class="tuner-strings" id="tunerStrings"></div>
+    <div class="tuner-readout">
+      <div class="tuner-note-wrap">
+        <div class="tuner-note" id="tunerNote">—</div>
+        <div class="tune-toast" id="tuneToast" aria-hidden="true"><span class="tt-tick">✓</span></div>
+      </div>
+      <div class="tuner-cents" id="tunerCents">等待信号</div>
+      <div class="tune-hold" id="tuneHold" hidden>已调准 <b>0.0</b> 秒</div>
+    </div>
+    <div class="tuner-meter">
+      <div class="meter-track"></div>
+      <div class="meter-center"></div>
+      <div class="meter-needle" id="meterNeedle"></div>
+      <div class="meter-scale"><span>−50</span><span>0</span><span>+50</span></div>
+    </div>
+    <div class="tuner-freqs" id="tunerFreqs">目标 — Hz · 实测 — Hz</div>
+  </div>
+
+  <div class="tuner-actions">
+    <button type="button" class="primary" id="tunerStart">◉ 开始监听</button>
+  </div>
+  <div class="tuner-auto"><label class="check"><input id="tunerAuto" type="checkbox" checked> 自动识别最近的一根弦</label></div>
+  <div class="status" id="tunerStatus" aria-live="polite">选好乐器和调音方案，点「开始监听」后拨弦</div>
+  <p class="hint">麦克风只在点「开始监听」后开启，切到别的标签页会自动关闭。若提示没有权限，请用「启动（调音器可用）」打开——直接双击 html（file:// 协议）浏览器不允许网页使用麦克风。</p>
+</section>
+
+<section class="panel">
+  <h2 class="section-title">个性化调音</h2>
+  <p class="hint" style="margin:0 0 4px">在当前方案上把每根弦升或降半音，改完立即生效。保存后存在本机，下次打开自动恢复。</p>
+  <div class="custom-strings" id="customStrings"></div>
+  <div class="row" style="margin-top:15px">
+    <button type="button" id="saveCustom">保存到本地</button>
+    <button type="button" id="resetCustom">恢复方案原调</button>
+  </div>
+  <div class="status" id="customStatus">当前：标准</div>
+</section>
+</div>
+
+<div class="app-page" id="pageDrums" data-page="drums">
+<section class="panel drum-panel">
+  <div class="drum-head">
+    <h2 class="section-title" style="margin:0;border:0;padding:0">鼓机伴奏</h2>
+    <span class="drum-kicker">DRUM MACHINE · SYNTH KIT</span>
+  </div>
+
+  <div class="drum-transport">
+    <div class="drum-tempo">
+      <button type="button" class="drum-step" id="drumMinus" aria-label="速度减 1">−</button>
+      <div class="drum-bpm"><input id="drumBpm" class="bpm-input drum-bpm-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" value="120" aria-label="鼓机 BPM，可直接输入数字"><i>BPM</i></div>
+      <button type="button" class="drum-step" id="drumPlus" aria-label="速度加 1">+</button>
+    </div>
+    <button type="button" class="primary" id="drumPlay">▶ 播放</button>
+  </div>
+
+  <div class="drum-styles" id="drumStyles"></div>
+
+  <div class="drum-controls">
+    <div class="drum-line"><span class="drum-label">节奏</span><div class="drum-chips" id="drumVariants"></div></div>
+    <div class="drum-line"><span class="drum-label">加花</span><div class="drum-chips" id="drumFills"></div></div>
+    <div class="drum-line"><span class="drum-label">加花间隔</span><div class="drum-chips" id="drumEvery"></div></div>
+    <div class="drum-line"><span class="drum-label">预备拍</span><div class="drum-chips" id="drumCountIn"></div></div>
+  </div>
+
+  <div class="field" style="margin-top:18px">
+    <label for="drumVolume">鼓机音量 <span id="drumVolText">75%</span></label>
+    <input id="drumVolume" type="range" min="0" max="100" value="75">
+  </div>
+
+  <div class="field" style="margin-top:14px">
+    <label for="drumDrive">颗粒 / 燥度 <span id="drumDriveText">60%</span></label>
+    <input id="drumDrive" type="range" min="0" max="100" value="60">
+  </div>
+
+  <div class="status" id="drumStatus" aria-live="polite">选一个风格，点播放</div>
+  <p class="hint">鼓声全部由浏览器实时合成（底鼓 / 军鼓 / 边击 / 踩镲 / 开镲 / 吊镲 / 嗵鼓），经过压缩 + 失真处理，所以比原始合成音更冲、更有颗粒。不加载任何音频文件，断网也能用。速度与节拍器共用同一个 BPM；预备拍只数拍子，不进正式节奏。</p>
+</section>
+</div>
+
+<nav class="bottom-nav" aria-label="主导航">
+  <button class="nav-item active" type="button" data-page-target="metronome" aria-current="page">
+    <span class="nav-icon">◷</span><span>节拍器</span>
+  </button>
+  <button class="nav-item" type="button" data-page-target="practice">
+    <span class="nav-icon">◫</span><span>练习计划</span>
+  </button>
+  <button class="nav-item" type="button" data-page-target="tuner">
+    <span class="nav-icon">◉</span><span>调音器</span>
+  </button>
+  <button class="nav-item" type="button" data-page-target="drums">
+    <span class="nav-icon">◍</span><span>鼓机</span>
+  </button>
+</nav>
+<footer>IMWENT STUDIO  ·  OFFLINE READY  ·  CHROME / EDGE</footer>
+</main>
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ const pageButtons = [...document.querySelectorAll('[data-page-target]')];
+ function showPage(name){
+   if(name!=='tuner') stopTuner();
+   if(name!=='drums') stopDrums();
+   if(name==='tuner'&&state.running) stop();
+   document.querySelectorAll('.app-page').forEach(p=>p.classList.toggle('active',p.dataset.page===name));
+   pageButtons.forEach(b=>{const active=b.dataset.pageTarget===name;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ }
+ pageButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.pageTarget)));
+
+ const state = {running:false, bpm:120, beat:0, sub:0, nextTime:0, timer:null, ctx:null,
+   tapTimes:[], barCount:0, stageBars:0, restRemaining:0, trainingBpm:100};
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ const num=id=>Number($(id).value);
+ const beatCount=()=>num('numerator');
+ const subdiv=()=>num('subdivision');
+ const beatInterval=()=>60/state.bpm;
+ const feel=()=> $('feel').value;
+ function intervalToNext(sub){
+   const base=beatInterval()/subdiv();
+   if(feel()==='swing' && subdiv()%2===0){
+     const pair=beatInterval()*2/subdiv(), long=num('swingRatio')/100;
+     return sub%2===0?pair*long:pair*(1-long);
+   }
+   return base;
+ }
+ function isShuffleSilent(sub){return feel()==='shuffle' && [3,6,12].includes(subdiv()) && sub%3===1;}
+ function updateFeelUI(){
+   const mode=feel(), sc=$('swingControls');sc.classList.toggle('visible',mode==='swing');
+   $('swingValue').textContent=num('swingRatio')+'%';
+   $('feelHelp').textContent=mode==='straight'?'直拍：所有细分均匀间隔。':mode==='swing'?(subdiv()%2===0?'摇摆：每组偶数细分按长—短比例摆动。':'当前细分数为奇数，Swing 暂不生效；建议选择 2、4、6、8 或 12。'):( [3,6,12].includes(subdiv())?'Shuffle：以三连音为基础，弱化每组三连音的中间音。':'当前细分数不适合 Shuffle；建议选择 3、6 或 12。');
+ }
+ function updateDial(){
+   const p=(state.bpm-30)/270;
+   const angle=-135+p*270;
+   $('tempoDial').style.setProperty('--dial-progress',(p*270)+'deg');
+   $('tempoDial').style.setProperty('--dial-angle',angle+'deg');
+   $('dialKnob').style.transform=`rotate(${angle}deg) translateY(-${Math.min(143,Math.max(110,$('tempoDial').getBoundingClientRect().width/2-3))}px)`;
+   $('tempoDial').setAttribute('aria-valuenow',String(state.bpm));
+ }
+ function setBpm(v){
+   state.bpm = clamp(Math.round(v),30,300);
+   const m = $('bpm'), d = $('drumBpm');
+   if(m && document.activeElement !== m) m.value = state.bpm;
+   if(d && document.activeElement !== d) d.value = state.bpm;
+   updateDial();
+ }
+ // BPM 框：点进去直接输数字，回车/失焦生效，Esc 取消
+ function bindBpmInput(el){
+   if(!el) return;
+   const commit = () => {
+     const v = parseInt(el.value,10);
+     if(Number.isFinite(v)) setBpm(v);
+     el.value = String(state.bpm);
+   };
+   el.addEventListener('focus', () => { try{ el.select(); }catch(e){} });
+   el.addEventListener('pointerdown', e => { e.stopPropagation(); });
+   el.addEventListener('click', e => {
+     e.stopPropagation();
+     if(document.activeElement !== el){ try{ el.focus(); el.select(); }catch(err){} }
+   });
+   el.addEventListener('keydown', e => {
+     if(e.key === 'Enter'){ e.preventDefault(); el.blur(); }
+     else if(e.key === 'Escape'){ e.preventDefault(); el.value = String(state.bpm); el.blur(); }
+   });
+   el.addEventListener('blur', commit);
+   el.addEventListener('change', commit);
+ }
+ function makeLamps(){
+   const host=$('beatLamps');host.innerHTML='';
+   for(let i=0;i<beatCount();i++){
+     const group=document.createElement('div');group.className='beat-unit';group.id='beatUnit'+i;
+     const beatLamp=document.createElement('div');beatLamp.className='lamp';beatLamp.id='lamp'+i;beatLamp.textContent=String(i+1);
+     beatLamp.setAttribute('aria-label',`第 ${i+1} 拍`);group.appendChild(beatLamp);
+     const track=document.createElement('div');track.className='subdivision-track';track.id='subTrack'+i;
+     for(let j=0;j<subdiv();j++){const dot=document.createElement('span');dot.className='sub-lamp';dot.id=`subLamp${i}_${j}`;dot.setAttribute('aria-label',`第 ${i+1} 拍第 ${j+1} 个细分`);track.appendChild(dot);}
+     group.appendChild(track);host.appendChild(group);
+   }
+ }
+ function flash(beat, sub){
+   document.querySelectorAll('.beat-unit').forEach((el,i)=>el.classList.toggle('current',i===beat));
+   document.querySelectorAll('.lamp').forEach((el,i)=>{el.className='lamp'+(i===beat?(sub===0&&beat===0?' down':' active'):'');});
+   document.querySelectorAll('.sub-lamp').forEach(el=>el.classList.remove('active','silent'));
+   const dot=$(`subLamp${beat}_${sub}`);if(dot){dot.classList.add('active');if(isShuffleSilent(sub))dot.classList.add('silent');}
+   $('status').textContent=`第 ${beat+1} 拍 · ${sub+1}/${subdiv()} 细分${isShuffleSilent(sub)?' · Shuffle 空隙':''}`;
+ }
+ function sound(time, strong, sub){
+   if(!state.ctx)return;
+   const ctx=state.ctx, osc=ctx.createOscillator(), gain=ctx.createGain();
+   const wood=$('tone').value==='wood';
+   osc.type=wood?'triangle':'sine';
+   osc.frequency.setValueAtTime(strong?(wood?1250:1500):(sub===0?(wood?850:1000):(wood?620:760)),time);
+   const vol=num('volume')/100*(strong?1:.72)*(sub===0?1:.72);
+   gain.gain.setValueAtTime(0.0001,time);
+   gain.gain.exponentialRampToValueAtTime(Math.max(.0002,vol*.22),time+.003);
+   gain.gain.exponentialRampToValueAtTime(.0001,time+(wood?.045:.035));
+   osc.connect(gain);gain.connect(ctx.destination);osc.start(time);osc.stop(time+.06);
+ }
+ function schedule(){
+   if(!state.running)return;
+   const ctx=state.ctx, lookahead=.12;
+   while(state.nextTime<ctx.currentTime+lookahead){
+     const beat=state.beat, sub=state.sub, strong=beat===0&&sub===0&&$('accent').value==='on';
+     if(!isShuffleSilent(sub))sound(state.nextTime,strong,sub);
+     const delay=Math.max(0,(state.nextTime-ctx.currentTime)*1000);
+     setTimeout(()=>{if(state.running)flash(beat,sub);},delay);
+     state.sub++;
+     if(state.sub>=subdiv()){
+       state.sub=0;state.beat++;
+       if(state.beat>=beatCount()){
+         state.beat=0;state.barCount++;onBarComplete();
+       }
+     }
+     state.nextTime+=intervalToNext(sub);
+   }
+   state.timer=setTimeout(schedule,25);
+ }
+ function onBarComplete(){
+   if(!$('progressive').checked)return;
+   const bars=Math.max(1,num('barsPerStep'));
+   if(state.restRemaining>0){state.restRemaining--;return;}
+   state.stageBars++;
+   if(state.stageBars>=bars){
+     state.stageBars=0;
+     const target=clamp(num('targetBpm')||160,30,300);
+     const step=clamp(num('stepBpm')||2,1,20);
+     if(state.bpm<target){
+       setBpm(Math.min(target,state.bpm+step));
+       state.restRemaining=clamp(num('restBars')||0,0,20);
+       $('status').textContent=`进入下一阶段：${state.bpm} BPM`;
+     }else{
+       $('status').textContent=`已达到目标速度 ${target} BPM！`;
+       $('progressive').checked=false;
+     }
+   }
+   updateTraining();
+ }
+ function updateTraining(){
+   const bars=Math.max(1,num('barsPerStep'));
+   $('trainingStatus').textContent=`当前阶段：${state.bpm} BPM · ${state.stageBars} / ${bars} 小节${state.restRemaining?` · 休息 ${state.restRemaining} 小节`:''}`;
+   $('progress').style.width=(state.stageBars/bars*100)+'%';
+ }
+ async function start(){
+   if(state.running)return;
+   const AC=window.AudioContext||window.webkitAudioContext;
+   if(!AC){alert('当前浏览器不支持 Web Audio，请使用最新版 Chrome 或 Edge。');return;}
+   state.ctx=state.ctx||new AC(); if(state.ctx.state==='suspended')await state.ctx.resume();
+   state.running=true;state.beat=0;state.sub=0;state.nextTime=state.ctx.currentTime+.05;
+   $('start').textContent='■ 停止';$('start').classList.add('stop');
+   $('status').textContent='节拍运行中';schedule();
+ }
+ function stop(){
+   state.running=false;clearTimeout(state.timer);
+   $('start').textContent='▶ 开始';$('start').classList.remove('stop');
+   document.querySelectorAll('.lamp').forEach(el=>el.className='lamp');
+   $('status').textContent='已停止';
+ }
+ $('start').onclick=()=>state.running?stop():start();
+
+ $('minus').onclick=()=>setBpm(state.bpm-1);$('plus').onclick=()=>setBpm(state.bpm+1);
+ const dial=$('tempoDial');
+ function setDialFromPointer(e){
+   const r=dial.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+   let angle=Math.atan2(e.clientY-cy,e.clientX-cx)*180/Math.PI;
+   angle=clamp(angle,-135,135);
+   setBpm(30+(angle+135)/270*270);
+ }
+ dial.addEventListener('pointerdown',e=>{
+   e.preventDefault();dial.setPointerCapture(e.pointerId);setDialFromPointer(e);
+ });
+ dial.addEventListener('pointermove',e=>{if(dial.hasPointerCapture(e.pointerId))setDialFromPointer(e);});
+ dial.addEventListener('keydown',e=>{
+   if(e.key==='ArrowUp'||e.key==='ArrowRight'){e.preventDefault();setBpm(state.bpm+1);}
+   if(e.key==='ArrowDown'||e.key==='ArrowLeft'){e.preventDefault();setBpm(state.bpm-1);}
+   if(e.key==='PageUp'){e.preventDefault();setBpm(state.bpm+10);}
+   if(e.key==='PageDown'){e.preventDefault();setBpm(state.bpm-10);}
+   if(e.key==='Home'){e.preventDefault();setBpm(30);}
+   if(e.key==='End'){e.preventDefault();setBpm(300);}
+ });
+ $('numerator').onchange=()=>{makeLamps();state.beat=0;state.sub=0;};
+ $('subdivision').onchange=()=>{makeLamps();state.beat=0;state.sub=0;};
+ $('feel').onchange=updateFeelUI;
+ $('swingRatio').oninput=()=>{updateFeelUI();};
+ $('tap').onclick=()=>{
+   const now=performance.now();state.tapTimes=state.tapTimes.filter(t=>now-t<3000);state.tapTimes.push(now);
+   if(state.tapTimes.length>=2){const gaps=state.tapTimes.slice(1).map((t,i)=>t-state.tapTimes[i]);setBpm(60000/(gaps.reduce((a,b)=>a+b,0)/gaps.length));}
+   if(state.tapTimes.length>6)state.tapTimes=state.tapTimes.slice(-4);
+ };
+ $('applyTraining').onclick=()=>{setBpm(num('startBpm'));state.stageBars=0;state.restRemaining=0;updateTraining();};
+ $('resetTraining').onclick=()=>{state.stageBars=0;state.barCount=0;state.restRemaining=0;setBpm(num('startBpm'));updateTraining();};
+
+ // Independent practice countdown: it does not stop or alter the metronome.
+ const timerState={duration:300,remaining:300,running:false,deadline:0,interval:null,stages:0,totalSeconds:0,lastTick:0};
+ const fmtTime=seconds=>{seconds=Math.max(0,Math.ceil(seconds));const m=Math.floor(seconds/60),s=seconds%60;return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');};
+ function renderTimer(){
+   $('timerDisplay').textContent=fmtTime(timerState.remaining);
+   $('timerProgress').style.width=((1-timerState.remaining/timerState.duration)*100)+'%';
+   $('timerStages').textContent=timerState.stages;
+   $('timerTotal').textContent=fmtTime(timerState.totalSeconds);
+   $('timerStart').textContent=timerState.running?'Ⅱ 暂停':'▶ 训练开始';
+   $('timerStart').classList.toggle('stop',timerState.running);
+ }
+ function chooseTimer(minutes){
+   minutes=clamp(Math.round(minutes)||5,1,180);
+   pauseTimer(false);timerState.duration=minutes*60;timerState.remaining=timerState.duration;
+   $('customMinutes').value=minutes;
+   document.querySelectorAll('#timerPresets button').forEach(b=>b.classList.toggle('selected',Number(b.dataset.minutes)===minutes));
+   $('timerCaption').textContent=`${minutes} MINUTE PRACTICE BLOCK`;
+   $('timerStatus').textContent='阶段时长已设置，准备开始';renderTimer();
+ }
+ function timerChime(){
+   try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const c=state.ctx||new AC();state.ctx=c;if(c.state==='suspended')c.resume();
+     [880,1174.66].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+i*.16;o.type='sine';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.13,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+.28);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.3);});
+   }catch(e){}
+ }
+ function pauseTimer(updateStatus=true){
+   const wasRunning=timerState.running;
+   if(wasRunning){timerState.running=false;clearInterval(timerState.interval);timerState.interval=null;timerState.lastTick=0;stop();}
+   if(updateStatus)$('timerStatus').textContent='训练已暂停';renderTimer();
+ }
+ function finishTimer(){
+   timerState.running=false;clearInterval(timerState.interval);timerState.interval=null;timerState.remaining=0;
+   timerState.stages++;timerChime();
+   $('timerStatus').textContent=`本阶段完成！已完成 ${timerState.stages} 个阶段`;
+   if($('autoNextTimer').checked){timerState.remaining=timerState.duration;timerState.lastTick=performance.now();timerState.deadline=timerState.lastTick+timerState.duration*1000;timerState.running=true;$('timerStatus').textContent='阶段完成，自动开始下一阶段';timerState.interval=setInterval(tickTimer,200);}
+   else{stop();}
+   renderTimer();
+ }
+ function tickTimer(){
+   const now=performance.now();
+   if(timerState.lastTick){timerState.totalSeconds+=Math.max(0,(now-timerState.lastTick)/1000);}
+   timerState.lastTick=now;timerState.remaining=Math.max(0,(timerState.deadline-now)/1000);
+   if(timerState.remaining<=0){finishTimer();return;}
+   $('timerTotal').textContent=fmtTime(timerState.totalSeconds);renderTimer();
+ }
+ async function startTimer(){
+   if(timerState.running){pauseTimer();return;}
+   const AC=window.AudioContext||window.webkitAudioContext;
+   if(AC){state.ctx=state.ctx||new AC();if(state.ctx.state==='suspended')await state.ctx.resume();}
+   // Training start synchronizes the countdown with the currently configured metronome.
+   if(!state.running)await start();
+   timerState.running=true;timerState.lastTick=performance.now();timerState.deadline=timerState.lastTick+timerState.remaining*1000;
+   $('timerStatus').textContent='练习进行中 · 专注当前阶段';timerState.interval=setInterval(tickTimer,200);renderTimer();
+ }
+ $('timerPresets').addEventListener('click',e=>{const b=e.target.closest('button[data-minutes]');if(b)chooseTimer(Number(b.dataset.minutes));});
+ $('applyCustomTimer').onclick=()=>chooseTimer(num('customMinutes'));
+ $('timerStart').onclick=startTimer;
+ $('timerReset').onclick=()=>{pauseTimer(false);timerState.remaining=timerState.duration;timerState.lastTick=0;$('timerStatus').textContent='训练已重置';renderTimer();};
+
+ // ---------- Instruments, tunings, tuner ----------
+ const NOTE_NAMES = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+ const FLAT_NAMES = ['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+ const noteLabel = (m,flat) => ({n:(flat?FLAT_NAMES:NOTE_NAMES)[((m%12)+12)%12], oct:Math.floor(m/12)-1});
+ const noteName = m => {const l=noteLabel(m,tuner.flat);return l.n+l.oct;};
+ // 把一组定弦排成 "D2 A2 D3 G3 B3 E4"（12 弦复弦用 · 连接）
+ const notesFrom = (layout,flat) => layout.map(a=>a.map(m=>{const l=noteLabel(m,flat);return l.n+l.oct;}).join('·')).join(' ');
+ const median = arr => {const s=[...arr].sort((a,b)=>a-b);return s[Math.floor(s.length/2)];};
+ const STORE_KEY = 'imwent.tuner.custom.v2';
+
+ // midis: 一组 = 一根"弦位"，12 弦吉他的复弦用两个 midi 表示（低音弦差八度，高音弦同音）
+ const INSTRUMENTS = [
+  {id:'guitar', label:'吉他', models:[
+    {id:'g6', label:'6 弦', tunings:[
+      {cat:'标准', id:'std', name:'标准 E（原调）', strings:[[40],[45],[50],[55],[59],[64]]},
+      {cat:'重力', id:'dropd',    name:'Drop D',           strings:[[38],[45],[50],[55],[59],[64]]},
+      {cat:'重力', id:'dbldropd', name:'Double Drop D',    strings:[[38],[45],[50],[55],[59],[62]]},
+      {cat:'重力', id:'dmodal',   name:'D modal（DADGAD）', strings:[[38],[45],[50],[55],[57],[62]]},
+      {cat:'重力', id:'ddaddy',   name:'Double Daddy',     strings:[[38],[45],[50],[50],[57],[62]]},
+      {cat:'重力', id:'dropcs',   name:'Drop C♯',          strings:[[37],[44],[49],[54],[58],[63]]},
+      {cat:'重力', id:'dropc',    name:'Drop C',           strings:[[36],[43],[48],[53],[57],[62]]},
+      {cat:'重力', id:'dropb',    name:'Drop B',           strings:[[35],[42],[47],[52],[56],[61]]},
+      {cat:'重力', id:'dropa',    name:'Drop A',           strings:[[33],[40],[45],[50],[54],[59]]},
+      {cat:'强力', id:'m1',       name:'降半音 E♭（-1）',   strings:[[39],[44],[49],[54],[58],[63]]},
+      {cat:'强力', id:'m2',       name:'降全音 D（-2）',    strings:[[38],[43],[48],[53],[57],[62]]},
+      {cat:'强力', id:'p1',       name:'升半音（+1）',      strings:[[41],[46],[51],[56],[60],[65]]},
+      {cat:'强力', id:'p2',       name:'升全音（+2）',      strings:[[42],[47],[52],[57],[61],[66]]},
+      {cat:'强力', id:'gmodal',   name:'G modal',          strings:[[38],[43],[50],[55],[60],[62]]},
+      {cat:'强力', id:'fourths',  name:'纯四度定弦',        strings:[[40],[45],[50],[55],[60],[65]]},
+      {cat:'强力', id:'nst',      name:'NST 新标准定弦',    strings:[[36],[43],[50],[57],[64],[67]]},
+      {cat:'开放', id:'openc',    name:'Open C',           strings:[[36],[43],[48],[55],[60],[64]]},
+      {cat:'开放', id:'opene',    name:'Open E',           strings:[[40],[47],[52],[56],[59],[64]]},
+      {cat:'开放', id:'openf',    name:'Open F',           strings:[[36],[41],[48],[53],[57],[65]]},
+      {cat:'开放', id:'openg',    name:'Open G',           strings:[[38],[43],[50],[55],[59],[62]]},
+      {cat:'开放', id:'opena',    name:'Open A',           strings:[[40],[45],[49],[52],[57],[64]]},
+      {cat:'开放', id:'opena2',   name:'Open A 2',         strings:[[40],[45],[52],[57],[61],[64]]},
+      {cat:'开放', id:'openam',   name:'Open Am',          strings:[[40],[45],[52],[57],[60],[64]]},
+      {cat:'开放', id:'openem',   name:'Open Em',          strings:[[40],[47],[52],[55],[59],[64]]},
+      {cat:'开放', id:'opend',    name:'Open D',           strings:[[38],[45],[50],[54],[57],[62]]},
+      {cat:'开放', id:'opendm',   name:'Open Dm',          strings:[[38],[45],[50],[53],[57],[62]]},
+    ]},
+    {id:'g7', label:'7 弦', tunings:[
+      {cat:'标准', id:'std',     name:'标准 B',   strings:[[35],[40],[45],[50],[55],[59],[64]]},
+      {cat:'重力', id:'dropa',   name:'Drop A',   strings:[[33],[40],[45],[50],[55],[59],[64]]},
+      {cat:'特殊', id:'russian', name:'俄罗斯吉他', strings:[[38],[43],[47],[50],[55],[59],[62]]},
+      {cat:'特殊', id:'brazil',  name:'巴西吉他',   strings:[[36],[40],[45],[50],[55],[59],[64]]},
+      {cat:'降音', id:'eb',      name:'降半音',    strings:[[34],[39],[44],[49],[54],[58],[63]]},
+    ]},
+    {id:'g8', label:'8 弦', tunings:[
+      {cat:'标准', id:'std',   name:'标准 F♯',    strings:[[30],[35],[40],[45],[50],[55],[59],[64]]},
+      {cat:'重力', id:'drope', name:'Drop E',     strings:[[28],[35],[40],[45],[50],[55],[59],[64]]},
+      {cat:'降音', id:'m1',    name:'降半音',      strings:[[29],[34],[39],[44],[49],[54],[58],[63]]},
+      {cat:'降音', id:'m2',    name:'降全音（E）',  strings:[[28],[33],[38],[43],[48],[53],[57],[62]]},
+    ]},
+    {id:'g12', label:'12 弦', tunings:[
+      {cat:'标准', id:'std',    name:'标准（复弦）',  strings:[[40,52],[45,57],[50,62],[55,67],[59,59],[64,64]]},
+      {cat:'重力', id:'dropd',  name:'Drop D',       strings:[[38,50],[45,57],[50,62],[55,67],[59,59],[64,64]]},
+      {cat:'重力', id:'dbldropd', name:'Double Drop D', strings:[[38,50],[45,57],[50,62],[55,67],[59,59],[62,62]]},
+      {cat:'重力', id:'dmodal', name:'D modal',      strings:[[38,50],[45,57],[50,62],[55,67],[57,57],[62,62]]},
+      {cat:'重力', id:'dropc',  name:'Drop C',       strings:[[36,48],[43,55],[48,60],[53,65],[57,57],[62,62]]},
+      {cat:'重力', id:'dropcs', name:'Drop C♯',      strings:[[37,49],[44,56],[49,61],[54,66],[58,58],[63,63]]},
+      {cat:'重力', id:'dropb',  name:'Drop B',       strings:[[35,47],[42,54],[47,59],[52,64],[56,56],[61,61]]},
+      {cat:'重力', id:'dropa',  name:'Drop A',       strings:[[33,45],[40,52],[45,57],[50,62],[54,54],[59,59]]},
+      {cat:'强力', id:'m1',     name:'降半音 E♭（-1）', strings:[[39,51],[44,56],[49,61],[54,66],[58,58],[63,63]]},
+      {cat:'强力', id:'m2',     name:'降全音 D（-2）',  strings:[[38,50],[43,55],[48,60],[53,65],[57,57],[62,62]]},
+      {cat:'开放', id:'openc',  name:'Open C',       strings:[[36,48],[43,55],[48,60],[55,67],[60,60],[64,64]]},
+      {cat:'开放', id:'opend',  name:'Open D',       strings:[[38,50],[45,57],[50,62],[54,66],[57,57],[62,62]]},
+      {cat:'开放', id:'opene',  name:'Open E',       strings:[[40,52],[47,59],[52,64],[56,56],[59,59],[64,64]]},
+      {cat:'开放', id:'openg',  name:'Open G',       strings:[[38,50],[43,55],[50,62],[55,67],[59,59],[62,62]]},
+    ]},
+  ]},
+  {id:'bass', label:'贝司', models:[
+    {id:'b4', label:'4 弦', tunings:[
+      {cat:'标准', id:'std',   name:'标准 E',        strings:[[28],[33],[38],[43]]},
+      {cat:'重力', id:'dropd', name:'Drop D',       strings:[[26],[33],[38],[43]]},
+      {cat:'重力', id:'dropc', name:'Drop C',       strings:[[24],[31],[36],[41]]},
+      {cat:'重力', id:'lowc',  name:'Low C',        strings:[[24],[33],[38],[43]]},
+      {cat:'降音', id:'m1',    name:'E flat（-1）',   strings:[[27],[32],[37],[42]]},
+      {cat:'降音', id:'lowb',  name:'Low B',        strings:[[23],[28],[33],[38]]},
+    ]},
+    {id:'b5', label:'5 弦', tunings:[
+      {cat:'标准', id:'std',   name:'标准 B',        strings:[[23],[28],[33],[38],[43]]},
+      {cat:'重力', id:'dropa', name:'Drop A',       strings:[[21],[28],[33],[38],[43]]},
+      {cat:'降音', id:'m1',    name:'Low B♭（-1）',   strings:[[22],[27],[32],[37],[42]]},
+      {cat:'降音', id:'m2',    name:'Low A（-2）',    strings:[[21],[26],[31],[36],[41]]},
+      {cat:'特殊', id:'highc', name:'High C',       strings:[[28],[33],[38],[43],[48]]},
+    ]},
+  ]},
+  {id:'ukulele', label:'尤克里里', models:[
+    {id:'uk', label:'尤克里里', tunings:[
+      {cat:'标准', id:'std',   name:'标准 GCEA（High-G）', strings:[[67],[60],[64],[69]]},
+      {cat:'重力', id:'lowg',  name:'Low G',             strings:[[55],[60],[64],[69]]},
+      {cat:'重力', id:'lowa',  name:'Low A',             strings:[[57],[62],[66],[71]]},
+      {cat:'特殊', id:'dsop',  name:'D Soprano',         strings:[[69],[62],[66],[71]]},
+      {cat:'特殊', id:'slack', name:'夏威夷松弦',          strings:[[67],[60],[64],[67]]},
+      {cat:'特殊', id:'m1',    name:'B 调弦（-1）',        strings:[[66],[59],[63],[68]]},
+      {cat:'特殊', id:'p1',    name:'C♯ 调弦（+1）',       strings:[[68],[61],[65],[70]]},
+    ]},
+    {id:'ukb', label:'巴里东', tunings:[
+      {cat:'标准', id:'std', name:'标准 DGBE', strings:[[50],[55],[59],[64]]},
+      {cat:'降音', id:'eb',  name:'降半音',     strings:[[49],[54],[58],[63]]},
+    ]},
+  ]},
+  {id:'bowed', label:'提琴', models:[
+    {id:'vln', label:'小提琴', tunings:[
+      {cat:'标准', id:'std', name:'标准 G3 D4 A4 E5', strings:[[55],[62],[69],[76]]},
+    ]},
+    {id:'vla', label:'中提琴', tunings:[
+      {cat:'标准', id:'std', name:'标准 C3 G3 D4 A4', strings:[[48],[55],[62],[69]]},
+    ]},
+    {id:'vlc', label:'大提琴', tunings:[
+      {cat:'标准', id:'std', name:'标准 C2 G2 D3 A3', strings:[[36],[43],[50],[57]]},
+    ]},
+    {id:'fid', label:'民族小提琴', tunings:[
+      {cat:'标准', id:'std',     name:'标准 GDAE', strings:[[55],[62],[69],[76]]},
+      {cat:'开放', id:'openg',   name:'Open G',   strings:[[55],[62],[67],[71]]},
+      {cat:'开放', id:'opend',   name:'Open D',   strings:[[50],[62],[69],[74]]},
+      {cat:'特殊', id:'cajun',   name:'卡津音乐',  strings:[[53],[60],[67],[74]]},
+      {cat:'特殊', id:'sawmill', name:'Sawmill',  strings:[[55],[62],[67],[74]]},
+      {cat:'特殊', id:'geedad',  name:'Gee-dad',  strings:[[55],[62],[69],[74]]},
+      {cat:'特殊', id:'highlow', name:'高低音',    strings:[[57],[62],[69],[76]]},
+      {cat:'特殊', id:'cross',   name:'交叉调谐',  strings:[[57],[64],[69],[76]]},
+      {cat:'特殊', id:'calico',  name:'Calico',   strings:[[57],[64],[69],[73]]},
+    ]},
+  ]},
+ ];
+
+ const tuner = {family:'guitar', modelId:'g6', tuningId:'std', offsets:[], layout:[], flat:false,
+   manual:false, targetStr:-1, listening:false, stream:null, ctx:null, analyser:null, buf:null,
+   loop:null, history:[], hadSignal:false, lastFreq:0, tightLatch:false,
+   tuned:new Set(), tightFrames:0, holdStart:0, holdMs:0, holdActive:false, holdString:-1, silentFrames:0};
+
+ const curFamily = () => INSTRUMENTS.find(f=>f.id===tuner.family) || INSTRUMENTS[0];
+ const curModel  = () => {const f=curFamily();return f.models.find(m=>m.id===tuner.modelId) || f.models[0];};
+ const curTuning = () => {const m=curModel();return m.tunings.find(t=>t.id===tuner.tuningId) || m.tunings[0];};
+ const refHz = () => Number($('refPitch').value) || 440;
+ const midiToFreq = m => refHz() * Math.pow(2,(m-69)/12);
+ const setTunerStatus = t => {$('tunerStatus').textContent = t;};
+
+ // 「调准了」提示：只在 "刚进入准" 的那一刻弹一次，显示 0.5 秒
+ let tuneToastTimer = null;
+ function flashTuned(){
+   const el = $('tuneToast');
+   if(!el) return;
+   if(tuneToastTimer) clearTimeout(tuneToastTimer);
+   el.classList.add('show');
+   tuneToastTimer = setTimeout(()=>{ el.classList.remove('show'); tuneToastTimer = null; }, 500);
+   if(navigator.vibrate){ try{ navigator.vibrate(28); }catch(e){} }
+ }
+
+ // 已调准计时：准了就开始累加，声音停或跑音就冻结在最后的数值
+ const fmtHold = ms => {
+   const s = ms/1000;
+   return s < 60 ? s.toFixed(1)+' 秒' : Math.floor(s/60)+':'+(s%60).toFixed(1).padStart(4,'0');
+ };
+ function paintHold(){
+   const el = $('tuneHold'); if(!el) return;
+   if(!tuner.holdMs && !tuner.holdActive){ el.hidden = true; el.classList.remove('stopped'); return; }
+   el.hidden = false;
+   el.innerHTML = `已调准 <b>${fmtHold(tuner.holdMs)}</b>`;
+   el.classList.toggle('stopped',!tuner.holdActive);
+ }
+ function resetTuned(){
+   tuner.tuned.clear();
+   tuner.tightFrames = 0; tuner.holdActive = false; tuner.holdMs = 0; tuner.holdString = -1;
+   document.querySelectorAll('.string-col').forEach(el=>el.classList.remove('tuned'));
+   paintHold();
+ }
+ function updateHold(tight,idx){
+   const now = performance.now();
+   if(idx !== tuner.holdString){
+     tuner.holdString = idx; tuner.holdMs = 0; tuner.holdActive = false; tuner.holdStart = 0; tuner.tightFrames = 0;
+   }
+   if(tight){
+     if(!tuner.holdActive){ tuner.holdActive = true; tuner.holdStart = now; }
+     tuner.holdMs = now - tuner.holdStart;
+     tuner.tightFrames++;
+     if(tuner.tightFrames >= 3 && !tuner.tuned.has(idx)){
+       tuner.tuned.add(idx);
+       const col = document.querySelectorAll('.string-col')[idx];
+       if(col) col.classList.add('tuned');
+     }
+   }else{
+     tuner.holdActive = false;
+     tuner.tightFrames = 0;
+   }
+   paintHold();
+ }
+
+ function loadCustom(){ try{ return JSON.parse(localStorage.getItem(STORE_KEY)||'{}') || {}; }catch(e){ return {}; } }
+ function saveCustomStore(obj){ try{ localStorage.setItem(STORE_KEY,JSON.stringify(obj)); return true; }catch(e){ return false; } }
+
+ function setNeedle(cents,tight){
+   const p = Math.max(-50,Math.min(50,cents));
+   const needle = $('meterNeedle');
+   needle.style.left = `calc(50% + ${(p*0.86).toFixed(2)}%)`;
+   needle.classList.toggle('tight',tight);
+ }
+ function resetTunerReadout(){
+   $('tunerNote').textContent = '—';
+   const c = $('tunerCents'); c.textContent = '等待信号'; c.classList.remove('tight');
+   setNeedle(0,false);
+   $('tunerFreqs').textContent = '目标 — Hz · 实测 — Hz';
+   $('tunerStage').classList.remove('in-tune');
+   document.querySelectorAll('.string-col').forEach(el=>el.classList.remove('active','in-tune'));
+   tuner.tightLatch = false;
+   tuner.holdActive = false; tuner.tightFrames = 0;
+   paintHold();
+ }
+
+ function buildFamilies(){
+   // 乐器按钮由数据生成，新加乐器类型不用再改 HTML
+   const fhost = $('tunerFamilies'); fhost.innerHTML = '';
+   INSTRUMENTS.forEach(f=>{
+     const b = document.createElement('button');
+     b.type = 'button'; b.dataset.family = f.id; b.textContent = f.label;
+     b.classList.toggle('selected', f.id === tuner.family);
+     fhost.appendChild(b);
+   });
+   const host = $('tunerModels'); host.innerHTML = '';
+   curFamily().models.forEach(model=>{
+     const b = document.createElement('button');
+     b.type = 'button'; b.dataset.model = model.id; b.textContent = model.label;
+     b.classList.toggle('selected',model.id===tuner.modelId);
+     b.onclick = () => selectModel(model.id);
+     host.appendChild(b);
+   });
+ }
+ // 方形音块：把一组定弦排成 <i class="nb">D2</i> 这样
+ const tuningFlat = t => t.flat === true;
+ // 每一根"弦"单独一个偏移量（12 弦就是 12 个，而不是 6 组）
+ const layoutOf = (t,offsets) => {
+   let k = 0;
+   return t.strings.map(arr=>arr.map(m=>m+((offsets && offsets[k++]) || 0)));
+ };
+ // 方形音块：一个音一个方块；12 弦的复弦按"高音在前"拆成两个方块，和调音 App 的排法一致
+ const chipsHtml = (layout,flat) => layout
+   .flatMap(arr=>arr.slice().sort((a,b)=>b-a).map(m=>{const l=noteLabel(m,flat);return '<i class="nb">'+l.n+l.oct+'</i>';}))
+   .join('');
+
+ function buildTuningSelect(){
+   const menu = $('tuneMenu'); if(!menu) return;
+   const cur = curTuning();
+   const single = curModel().tunings.length <= 1;   // 只有一种调音就不给下拉
+   const btn = $('tunePickerBtn');
+   btn.classList.toggle('static', single);
+   btn.setAttribute('aria-haspopup', single ? 'false' : 'listbox');
+   btn.tabIndex = single ? -1 : 0;
+   if(single){ closeTuneMenu(); menu.innerHTML = ''; }
+   const changed = tuner.offsets.some(v=>v);
+   $('tunePickerName').textContent = cur.name + (changed ? '（已改）' : '');
+   $('tunePickerNotes').innerHTML = chipsHtml(layoutOf(cur,tuner.offsets), tuningFlat(cur));
+   if(single) return;
+
+   menu.innerHTML = '';
+   const order = ['标准','重力','强力','开放','降音','特殊'];
+   const groups = {};
+   curModel().tunings.forEach(t=>{ (groups[t.cat]=groups[t.cat]||[]).push(t); });
+   Object.keys(groups).sort((a,b)=>order.indexOf(a)-order.indexOf(b)).forEach(cat=>{
+     const head = document.createElement('div'); head.className = 'tune-cat'; head.textContent = cat;
+     menu.appendChild(head);
+     groups[cat].forEach(t=>{
+       const row = document.createElement('button');
+       row.type = 'button'; row.className = 'tune-row'; row.dataset.tuning = t.id;
+       row.setAttribute('role','option');
+       row.classList.toggle('selected', t.id === tuner.tuningId);
+       const nm = document.createElement('span'); nm.className = 'tr-name'; nm.textContent = t.name;
+       const notes = document.createElement('span'); notes.className = 'tr-notes';
+       notes.innerHTML = chipsHtml(t.strings, tuningFlat(t));
+       row.append(nm,notes);
+       menu.appendChild(row);
+     });
+   });
+   const saved = loadCustom()[tuner.modelId];
+   if(saved && Array.isArray(saved.offsets) && saved.offsets.some(v=>v)){
+     const head = document.createElement('div'); head.className = 'tune-cat'; head.textContent = '自定义';
+     menu.appendChild(head);
+     const base = curModel().tunings[0];
+     const row = document.createElement('button');
+     row.type = 'button'; row.className = 'tune-row'; row.dataset.tuning = '__saved';
+     row.setAttribute('role','option');
+     row.classList.toggle('selected', tuner.tuningId === '__saved');
+     const nm = document.createElement('span'); nm.className = 'tr-name'; nm.textContent = '我保存的自定义';
+     const notes = document.createElement('span'); notes.className = 'tr-notes';
+     notes.innerHTML = chipsHtml(layoutOf(base,saved.offsets), tuningFlat(base));
+     row.append(nm,notes);
+     menu.appendChild(row);
+   }
+ }
+ function openTuneMenu(){
+   $('tuneMenu').hidden = false;
+   $('tunePickerBtn').classList.add('open');
+   $('tunePickerBtn').setAttribute('aria-expanded','true');
+ }
+ function closeTuneMenu(){
+   const menu = $('tuneMenu');
+   if(!menu || menu.hidden) return;
+   menu.hidden = true;
+   $('tunePickerBtn').classList.remove('open');
+   $('tunePickerBtn').setAttribute('aria-expanded','false');
+ }
+ function selectTuning(v){
+   if(v === '__saved'){
+     const saved = loadCustom()[tuner.modelId];
+     tuner.offsets = saved && Array.isArray(saved.offsets) ? [...saved.offsets] : [];
+     tuner.tuningId = curModel().tunings[0].id;
+   }else{
+     tuner.tuningId = v; tuner.offsets = [];
+   }
+   tuner.manual = false; tuner.targetStr = -1;
+   buildStrings(); buildCustomRows(); resetTunerReadout(); resetTuned(); buildTuningSelect();
+   setTunerStatus(`${curFamily().label} · ${curModel().label} · ${curTuning().name}`);
+   closeTuneMenu();
+ }
+ function buildStrings(){
+   tuner.flat = curTuning().flat === true;
+   tuner.layout = layoutOf(curTuning(), tuner.offsets);
+   const host = $('tunerStrings'); host.innerHTML = '';
+   tuner.layout.forEach((arr,ei)=>{
+     const btn = document.createElement('button');
+     btn.type = 'button'; btn.className = 'string-col'; btn.dataset.index = String(ei);
+     btn.setAttribute('aria-label',`第 ${ei+1} 弦 ${arr.map(noteName).join(' / ')}`);
+     const pair = document.createElement('div'); pair.className = 'string-pair';
+     arr.forEach((m,si)=>{
+       const line = document.createElement('div'); line.className = 'string-line';
+       line.style.width = Math.max(1.6,4.2-ei*0.42-si*0.5).toFixed(2)+'px';
+       line.style.height = arr.length>1 ? '26px' : '64px';
+       pair.appendChild(line);
+     });
+     const chip = document.createElement('div');
+     chip.className = 'string-chip'+(arr.length>1?' pair':'');
+     chip.textContent = arr.map(noteName).join('·');
+     btn.appendChild(pair); btn.appendChild(chip);
+     btn.onclick = () => {
+       tuner.manual = true; tuner.targetStr = ei; $('tunerAuto').checked = false;
+       paintTuner(tuner.lastFreq);
+       setTunerStatus(`已锁定第 ${ei+1} 弦 ${arr.map(noteName).join(' / ')}`);
+     };
+     host.appendChild(btn);
+   });
+ }
+ function updateCustomStatus(){
+   const n = tuner.offsets.filter(o=>o).length;
+   const notes = tuner.layout.length ? notesFrom(tuner.layout,tuner.flat) : '';
+   $('customStatus').textContent = `当前：${curTuning().name}${notes?' · '+notes:''}${n?` · 已改 ${n} 根弦`:''}`;
+ }
+ function buildCustomRows(){
+   const host = $('customStrings'); host.innerHTML = '';
+   const total = curTuning().strings.reduce((n,arr)=>n+arr.length,0);
+   let k = 0;
+   curTuning().strings.forEach(arr=>arr.forEach(baseMidi=>{
+     const idx = k;
+     const off = tuner.offsets[idx] || 0;
+     const midi = baseMidi + off;
+     const num = total - idx;            // 从最细的一根数起：第 1 弦 = 最高音
+     const row = document.createElement('div'); row.className = 'custom-row';
+     const name = document.createElement('div'); name.className = 'cs-name'; name.textContent = `第 ${num} 弦`;
+     const minus = document.createElement('button');
+     minus.type='button'; minus.className='cs-step'; minus.textContent='−'; minus.setAttribute('aria-label',`第 ${num} 弦降半音`);
+     minus.onclick = () => stepOffset(idx,-1);
+     const mid = document.createElement('div'); mid.className='cs-mid';
+     const nn = document.createElement('span'); nn.className='cs-note'; nn.textContent = noteName(midi);
+     const oo = document.createElement('span');
+     oo.className = 'cs-off'+(off>0?' up':off<0?' down':'');
+     oo.textContent = off===0 ? '±0' : (off>0?'+':'')+off;
+     mid.appendChild(nn); mid.appendChild(oo);
+     const plus = document.createElement('button');
+     plus.type='button'; plus.className='cs-step'; plus.textContent='+'; plus.setAttribute('aria-label',`第 ${num} 弦升半音`);
+     plus.onclick = () => stepOffset(idx,1);
+     const freq = document.createElement('div'); freq.className='cs-freq'; freq.textContent = midiToFreq(midi).toFixed(1)+' Hz';
+     row.append(name,minus,mid,plus,freq);
+     host.appendChild(row);
+     k++;
+   }));
+   updateCustomStatus();
+ }
+ function stepOffset(i,d){
+   tuner.offsets[i] = Math.max(-12,Math.min(12,(tuner.offsets[i]||0)+d));
+   buildStrings(); buildCustomRows(); resetTuned(); buildTuningSelect();
+   if(tuner.lastFreq) paintTuner(tuner.lastFreq);
+ }
+ function selectModel(id){
+   tuner.modelId = id;
+   tuner.manual = false; tuner.targetStr = -1; tuner.lastFreq = 0;
+   const model = curFamily().models.find(x=>x.id===id) || curFamily().models[0];
+   const saved = loadCustom()[id];
+   tuner.tuningId = model.tunings[0].id;
+   tuner.offsets = saved && Array.isArray(saved.offsets) ? [...saved.offsets] : [];
+   buildFamilies(); buildTuningSelect(); buildStrings(); buildCustomRows(); resetTunerReadout(); resetTuned();
+   setTunerStatus(`${curFamily().label} · ${model.label} · ${curTuning().name}`);
+ }
+ function selectFamily(id){
+   tuner.family = id;
+   const f = curFamily();
+   selectModel(f.models[0].id);
+ }
+
+ function paintTuner(freq){
+   const cols = [...document.querySelectorAll('.string-col')];
+   cols.forEach(el=>el.classList.remove('active','in-tune'));
+   const manual = tuner.manual && tuner.targetStr >= 0;
+   if(!freq || freq <= 0){
+     resetTunerReadout();
+     if(manual && cols[tuner.targetStr]) cols[tuner.targetStr].classList.add('active');
+     return;
+   }
+   tuner.lastFreq = freq;
+   const midiFloat = 69 + 12*Math.log2(freq/refHz());
+   let bestE = 0, bestMidi = 69, bestDiff = Infinity;
+   tuner.layout.forEach((arr,ei)=>arr.forEach(m=>{
+     if(manual && ei !== tuner.targetStr) return;
+     const d = Math.abs(midiFloat-m);
+     if(d < bestDiff){ bestDiff = d; bestE = ei; bestMidi = m; }
+   }));
+   if(!isFinite(bestDiff)){ bestE = 0; bestMidi = tuner.layout[0][0]; }
+   const cents = (midiFloat-bestMidi)*100;
+   const {n,oct} = noteLabel(bestMidi,tuner.flat);
+   $('tunerNote').innerHTML = `${n}<span class="oct">${oct}</span>`;
+   const tight = Math.abs(cents) <= 3;
+   // 进入准区间（±3 音分）的瞬间弹提示；离开要超过 ±6 音分才算脱离，避免在边界抖动时反复弹
+   if(tight && !tuner.tightLatch){ tuner.tightLatch = true; flashTuned(); }
+   else if(!tight && Math.abs(cents) > 6){ tuner.tightLatch = false; }
+   updateHold(tight,bestE);
+   const cEl = $('tunerCents');
+   cEl.textContent = `${cents>0?'+':''}${cents.toFixed(0)} 音分 · ${tight?'准了':(cents>0?'偏高':'偏低')}`;
+   cEl.classList.toggle('tight',tight);
+   setNeedle(cents,tight);
+   $('tunerFreqs').textContent = `目标 ${midiToFreq(bestMidi).toFixed(1)} Hz · 实测 ${freq.toFixed(1)} Hz`;
+   $('tunerStage').classList.toggle('in-tune',tight);
+   const col = cols[bestE];
+   if(col){ col.classList.add('active'); if(tight) col.classList.add('in-tune'); }
+   const msg = tight ? `${n}${oct} 准了` : `${n}${oct} ${cents>0?'偏高':'偏低'} ${Math.abs(cents).toFixed(0)} 音分`;
+   if($('tunerStatus').textContent !== msg) setTunerStatus(msg);
+ }
+
+ // 自相关测音高：4 倍抽取后计算，覆盖 28–600 Hz（贝司 B0 到尤克里里 A4 以上的泛音区）。
+ function detectPitch(raw,sr){
+   const N = raw.length;
+   let rms = 0;
+   for(let i=0;i<N;i++) rms += raw[i]*raw[i];
+   rms = Math.sqrt(rms/N);
+   if(rms < 0.004) return -1;
+   const M = N>>2, d = new Float32Array(M);
+   for(let i=0;i<M;i++){ const j=i<<2; d[i] = (raw[j]+raw[j+1]+raw[j+2]+raw[j+3])*0.25; }
+   const dsr = sr/4;
+   const minLag = Math.max(3,Math.floor(dsr/1100));
+   const maxLag = Math.min(M-4,Math.ceil(dsr/26));
+   // 归一化自相关：抵消"滞后越长、重叠样本越少"带来的峰低偏置，低频（贝司 B0/A0）才准。
+   const sq = new Float64Array(M+1);
+   for(let i=0;i<M;i++) sq[i+1] = sq[i] + d[i]*d[i];
+   const corr = new Float32Array(maxLag+3);
+   let maxCorr = 0;
+   for(let lag=minLag;lag<=maxLag;lag++){
+     const n = M-lag;
+     let s = 0;
+     for(let i=0;i<n;i++) s += d[i]*d[i+lag];
+     const denom = Math.sqrt(sq[n]*(sq[M]-sq[lag]));
+     corr[lag] = denom > 0 ? s/denom : 0;
+     if(corr[lag] > maxCorr) maxCorr = corr[lag];
+   }
+   if(maxCorr <= 0.2) return -1;
+   let best = -1;
+   for(let lag=minLag+1;lag<maxLag;lag++){
+     if(corr[lag] > corr[lag-1] && corr[lag] >= corr[lag+1] && corr[lag] > maxCorr*0.8){ best = lag; break; }
+   }
+   if(best < 0){ for(let lag=minLag;lag<=maxLag;lag++){ if(corr[lag] >= maxCorr){ best = lag; break; } } }
+   if(best < 0) return -1;
+   const y1 = corr[best-1], y2 = corr[best], y3 = corr[best+1];
+   const denom = y1 - 2*y2 + y3;
+   let shift = denom !== 0 ? 0.5*(y1-y3)/denom : 0;
+   shift = Math.max(-0.5,Math.min(0.5,shift));
+   const freq = dsr/(best+shift);
+   return (freq > 25 && freq < 1300) ? freq : -1;
+ }
+
+ function tickTuner(){
+   if(!tuner.listening) return;
+   tuner.analyser.getFloatTimeDomainData(tuner.buf);
+   const f = detectPitch(tuner.buf,tuner.ctx.sampleRate);
+   if(f > 0){
+     tuner.silentFrames = 0;
+     tuner.history.push(f); if(tuner.history.length > 6) tuner.history.shift();
+     tuner.hadSignal = true;
+     paintTuner(median(tuner.history));
+   }else if(tuner.hadSignal){
+     // 拨弦衰减时偶尔会漏一帧，等连续两帧静音才判定"声音没了"，避免读数闪断
+     tuner.silentFrames++;
+     if(tuner.silentFrames >= 2){
+       tuner.silentFrames = 0;
+       tuner.history = []; tuner.hadSignal = false;
+       resetTunerReadout(); setTunerStatus('监听中 · 拨动一根弦');
+     }
+   }
+   tuner.loop = setTimeout(tickTuner,85);
+ }
+ async function startTuner(){
+   if(tuner.listening){ stopTuner(); return; }
+   const ua = navigator.userAgent || '';
+   const inWeChat = /MicroMessenger/i.test(ua);
+   if(!window.isSecureContext){
+     setTunerStatus(inWeChat
+       ? '微信内置浏览器不给麦克风权限，而且现在是 http 地址。请点右上角 ⋯ → 在浏览器中打开，并用 https 地址访问。'
+       : '这是 http 地址，浏览器不允许用麦克风：请用 https 或 localhost 打开本页。');
+     return;
+   }
+   if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+     setTunerStatus(inWeChat
+       ? '微信内置浏览器不支持麦克风采集：点右上角 ⋯ → 在浏览器中打开，再点「开始监听」。'
+       : '这个浏览器不支持麦克风采集，请用 Safari / Chrome / Edge。');
+     return;
+   }
+   setTunerStatus('正在请求麦克风权限…');
+   try{
+     tuner.stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false,channelCount:1}});
+   }catch(err){
+     const name = err && err.name;
+     setTunerStatus(name==='NotAllowedError' ? '麦克风权限被拒绝。点地址栏里的图标允许麦克风后重试。'
+       : name==='NotFoundError' ? '没有找到麦克风设备。'
+       : '麦克风启动失败：'+((err&&err.message)||err));
+     return;
+   }
+   const AC = window.AudioContext || window.webkitAudioContext;
+   tuner.ctx = new AC();
+   if(tuner.ctx.state === 'suspended') await tuner.ctx.resume();
+   const src = tuner.ctx.createMediaStreamSource(tuner.stream);
+   tuner.analyser = tuner.ctx.createAnalyser();
+   tuner.analyser.fftSize = 8192;
+   tuner.analyser.smoothingTimeConstant = 0;
+   src.connect(tuner.analyser);
+   tuner.buf = new Float32Array(tuner.analyser.fftSize);
+   tuner.history = []; tuner.hadSignal = false; tuner.listening = true;
+   tuner.silentFrames = 0; resetTuned();
+   $('tunerStage').classList.remove('idle');
+   $('tunerStart').textContent = '■ 停止监听';
+   $('tunerStart').classList.add('stop');
+   setTunerStatus('监听中 · 拨动一根弦');
+   tickTuner();
+ }
+ function stopTuner(){
+   if(!tuner.listening && !tuner.stream) return;
+   tuner.listening = false;
+   clearTimeout(tuner.loop); tuner.loop = null;
+   if(tuner.stream){ tuner.stream.getTracks().forEach(t=>t.stop()); tuner.stream = null; }
+   if(tuner.ctx){ try{ tuner.ctx.close(); }catch(e){} tuner.ctx = null; }
+   tuner.analyser = null; tuner.buf = null; tuner.history = []; tuner.hadSignal = false;
+   const b = $('tunerStart');
+   if(b){ b.textContent = '◉ 开始监听'; b.classList.remove('stop'); }
+   resetTunerReadout();
+   resetTuned();
+   $('tunerStage').classList.add('idle');
+   const toast = $('tuneToast');
+   if(toast) toast.classList.remove('show');
+   if(tuneToastTimer){ clearTimeout(tuneToastTimer); tuneToastTimer = null; }
+   setTunerStatus('已停止监听');
+ }
+
+ $('tunerStart').onclick = startTuner;
+ $('tunerFamilies').addEventListener('click',e=>{
+   const b = e.target.closest('button[data-family]'); if(!b) return;
+   selectFamily(b.dataset.family);
+ });
+ $('tunePickerBtn').onclick = ()=>{
+   if(curModel().tunings.length <= 1) return;   // 单一调音，不展开
+   $('tuneMenu').hidden ? openTuneMenu() : closeTuneMenu();
+ };
+ $('tuneMenu').addEventListener('click',e=>{
+   const row = e.target.closest('.tune-row'); if(!row) return;
+   selectTuning(row.dataset.tuning);
+ });
+ document.addEventListener('click',e=>{
+   if(!e.target.closest('.tune-picker-wrap')) closeTuneMenu();
+ });
+ document.addEventListener('keydown',e=>{ if(e.key === 'Escape') closeTuneMenu(); });
+ $('tunerAuto').onchange = e=>{
+   tuner.manual = !e.target.checked;
+   if(e.target.checked){ tuner.targetStr = -1; setTunerStatus('自动识别最近的一根弦'); }
+   else { tuner.targetStr = 0; setTunerStatus('手动模式 · 点一根弦锁定目标'); }
+ };
+ $('refPitch').onchange = ()=>{ buildCustomRows(); if(tuner.lastFreq) paintTuner(tuner.lastFreq); };
+ $('saveCustom').onclick = ()=>{
+   const store = loadCustom();
+   store[tuner.modelId] = {offsets:tuner.offsets.slice(), tuningId:curTuning().id, savedAt:Date.now()};
+   if(saveCustomStore(store)){
+     buildTuningSelect();
+     setTunerStatus('已保存到本机 · 下次打开自动恢复');
+     $('customStatus').textContent = `已保存：${curModel().label} · ${curTuning().name}`;
+   }else{
+     setTunerStatus('保存失败：浏览器不允许本地存储。');
+   }
+ };
+ $('resetCustom').onclick = ()=>{
+   tuner.offsets = [];
+   if(tuner.tuningId === '__saved') tuner.tuningId = curModel().tunings[0].id;
+   const store = loadCustom(); delete store[tuner.modelId]; saveCustomStore(store);
+   buildTuningSelect(); buildStrings(); buildCustomRows(); resetTunerReadout(); resetTuned();
+   setTunerStatus('已恢复方案原调');
+ };
+
+ document.addEventListener('keydown',e=>{
+   if(e.code !== 'Space') return;
+   if(['INPUT','SELECT','BUTTON','TEXTAREA'].includes(document.activeElement.tagName)) return;
+   e.preventDefault();
+   if($('pageDrums').classList.contains('active')) startDrums();
+   else if($('pageTuner').classList.contains('active')) startTuner();
+   else state.running ? stop() : start();
+ });
+ window.addEventListener('beforeunload',()=>{ stop(); stopTuner(); });
+
+ // 首次进入按默认乐器/方案构建界面
+ // ---------- Drum machine (Web Audio synth kit) ----------
+ const DRUM_VEL = {X:1, x:0.72, o:0.42};
+ const DRUM_STYLES = [
+  {id:'pop44', name:'Pop', sub:'流行 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'....x.......x...', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.......x...x...', s:'....x.......x..o', h:'x.x.x.x.x.x.x.X.'},
+    {k:'x.......x..x....', s:'....x.......x...', h:'x.x.x.x.x.x.x.X.', o:'..............x.'},
+  ]},
+  {id:'pop34', name:'Pop', sub:'流行 3/4', steps:12, quarters:3, variants:[
+    {k:'x...........', s:'....x...x...', h:'x.x.x.x.x.x.'},
+    {k:'x.......x...', s:'....x...x...', h:'x.x.x.x.x.x.', o:'..........x.'},
+    {k:'x.......x...', s:'....x...x...', h:'x.x.x.x.x.x.', z:'..........x.'},
+  ]},
+  {id:'pop68', name:'Pop', sub:'流行 6/8', steps:12, quarters:3, variants:[
+    {k:'x.......x...', s:'...x.....x..', h:'x.x.x.x.x.x.'},
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.x.x.x.x.x.', o:'..........x.'},
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.x.x.x.x.xX'},
+  ]},
+  {id:'slow', name:'Slow', sub:'慢歌 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'....x.......x...', h:'x...x...x...x...'},
+    {k:'x.......x...x...', s:'....x.......x...', h:'x...x...x...x...', z:'..............x.'},
+    {k:'x.......x.......', s:'....x.......x...', h:'x...x...x...x...', o:'..............o.'},
+  ]},
+  {id:'rock', name:'Rock', sub:'摇滚 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.x.....', s:'....x.......x...', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.....x.', s:'....x.......x...', h:'x.x.x.x.x.x.x.x.', o:'..............x.'},
+    {k:'x.x.....x.x.....', s:'....x.......x...', h:'x.x.x.x.x.x.x.x.', c:'x...............'},
+  ]},
+  {id:'blues', name:'Blues', sub:'蓝调 4/4', steps:12, quarters:4, variants:[
+    {k:'x.......x...', s:'...x.....x..', h:'x.xx.xx.xx.x'},
+    {k:'x.....x.x...', s:'...x.....xo.', h:'x.xx.xx.xx.x'},
+    {k:'x.....x.x...', s:'...x.....x.o', h:'x.xx.xx.xx.x', r:'X....X....X.'},
+  ]},
+  {id:'jazz', name:'Jazz', sub:'爵士 4/4', steps:12, quarters:4, variants:[
+    {r:'X.ox..X.ox..', h:'...o.....o..', k:'x.....x.....', s:'.o......o...'},
+    {r:'X.ox..X.oxox', h:'...o.....o..', k:'x.....x.....', s:'.o...o..o...'},
+    {r:'X.ox..X.ox.o', h:'...o.....o..', k:'x.....x.....', s:'.o...o..o..o'},
+  ]},
+  {id:'shuffle', name:'Shuffle', sub:'拖曳 4/4', steps:12, quarters:4, variants:[
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.xx.xx.xx.x'},
+    {k:'x.....x.x...', s:'...x.....xo.', h:'x.xx.xx.xx.x'},
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.xx.xx.xx.x', z:'...........x'},
+  ]},
+  {id:'swing', name:'Swing', sub:'摇摆 4/4', steps:12, quarters:4, variants:[
+    {k:'x.....x.....', s:'...x.....x..', h:'x.xx.xx.xx.x'},
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.xx.xx.xx.x', r:'X....X....X.'},
+    {k:'x.....x.x...', s:'...x.....x..', h:'x.xx.xx.xx.x', o:'..........x.'},
+  ]},
+  {id:'reggae', name:'Reggae', sub:'雷鬼 4/4', steps:16, quarters:4, variants:[
+    {k:'........x.......', s:'........x.......', h:'..x...x...x...x.'},
+    {k:'........x.......', s:'........x.......', h:'..x...x...x...x.', o:'....o.......o...'},
+    {k:'........x.......', s:'........x.......', h:'..x...x...x...x.', c:'x...............'},
+  ]},
+  {id:'bossa', name:'Bossa', sub:'波萨 4/4', steps:16, quarters:4, variants:[
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'o.o.o.o.o.o.o.o.'},
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'o.o.o.o.o.o.o.o.', r:'o..o..o..o..o...'},
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'o.o.o.o.o.o.o.o.', s:'....x.......x...'},
+  ]},
+  {id:'funk', name:'Funk', sub:'放克 4/4', steps:16, quarters:4, variants:[
+    {k:'x..x..x...x..x..', s:'....x..o....x..o', h:'XxXxXxXxXxXxXxXx'},
+    {k:'x..x..x...x..x..', s:'....x..o....x.oX', h:'XxXxXxXxXxXxXxXx', o:'..............o.'},
+    {k:'x..x..x...x..x..', s:'....x..o....x..o', h:'XxXxXxXxXxXxXxXx', c:'x...............'},
+  ]},
+  {id:'metal', name:'Metal', sub:'金属 4/4', steps:16, quarters:4, variants:[
+    {k:'x.xxx.xxx.xxx.xx', s:'....x.......x...', c:'x...............', h:'..x...x...x...x.'},
+    {k:'x.x.x.xxx.x.x.xx', s:'....x.......x...', c:'x...............', h:'xxxxxxxxxxxxxxxx'},
+    {k:'x.xxx.xxx.xxx.xx', s:'....x.......x...', c:'x.......x.......', h:'xxxxxxxxxxxxxxxx'},
+  ]},
+  {id:'punk', name:'Punk', sub:'朋克 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'....x.......x...', h:'xxxxxxxxxxxxxxxx'},
+    {k:'x.......x.x.....', s:'....x.......x...', h:'xxxxxxxxxxxxxxxx', c:'x...............'},
+    {k:'x...x...x...x...', s:'....x.......x...', h:'xxxxxxxxxxxxxxxx'},
+  ]},
+  {id:'disco', name:'Disco', sub:'迪斯科 4/4', steps:16, quarters:4, variants:[
+    {k:'x...x...x...x...', s:'....x.......x...', h:'..x...x...x...x.'},
+    {k:'x...x...x...x...', s:'....x.......x...', o:'..o...o...o...o.'},
+    {k:'x...x...x...x...', s:'....x.......x...', h:'..x...x...x...x.', z:'...x.......x....'},
+  ]},
+  {id:'hiphop', name:'Hip-Hop', sub:'嘻哈 4/4', steps:16, quarters:4, variants:[
+    {k:'x.....x.x.......', s:'....x.......x...', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.....x.', s:'....x.......x..o', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.......', s:'....x.......x.o.', h:'x.x.x.x.x.x.x.x.', o:'..............x.'},
+  ]},
+  {id:'trap', name:'Trap', sub:'陷阱 4/4', steps:16, quarters:4, variants:[
+    {k:'x.....x...x.....', s:'........x.......', h:'xxxxxxxxxxxxxxxx'},
+    {k:'x.....x...x..x..', s:'........x.......', h:'XxXxXxXxXxXxXxXx'},
+    {k:'x.....x...x.....', s:'........x.......', h:'XxXxXxXxXxXxXxXx', c:'x...............'},
+  ]},
+  {id:'country', name:'Country', sub:'乡村 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'....x..o....x..o', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.......', s:'....x..o....x..o', h:'x.x.x.x.x.x.x.x.', z:'..............x.'},
+    {k:'x.......x.......', s:'....x..o....x..o', h:'x.x.x.x.x.x.x.x.', c:'x...............'},
+  ]},
+  {id:'latin', name:'Latin', sub:'拉丁 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', z:'x..x..x.....x...', h:'..x...x...x...x.'},
+    {k:'x.....x.x.......', z:'x..x..x.....x...', h:'..x...x...x...x.', c:'x...............'},
+    {k:'x.......x.......', z:'x..x..x.....x...', h:'..x...x...x...x.', s:'....x.......x...'},
+  ]},
+  {id:'ska', name:'Ska', sub:'斯卡 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'..x...x...x...x.', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.......', s:'..x...x...x...x.', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.......x.......', s:'..x...x...x...x.', h:'x.x.x.x.x.x.x.x.', c:'x...............'},
+  ]},
+  {id:'gospel', name:'Gospel', sub:'福音 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', s:'....x..o....x..o', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.......', s:'....x..o....x..o', h:'x.xxx.x.x.xxx.x.'},
+    {k:'x.......x...x...', s:'....x..o....x..o', h:'x.x.x.x.x.x.x.x.', c:'x...............'},
+  ]},
+  {id:'rnb', name:'R&B', sub:'节奏布鲁斯 4/4', steps:16, quarters:4, variants:[
+    {k:'x.......x.......', z:'....x.......x...', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.......', z:'....x.......x..o', h:'x.x.x.x.x.x.x.x.'},
+    {k:'x.....x.x.....x.', z:'....x.......x...', h:'x.x.x.x.x.x.x.x.', o:'..............o.'},
+  ]},
+  {id:'march', name:'March', sub:'进行曲 4/4', steps:16, quarters:4, variants:[
+    {k:'x...x...x...x...', s:'....x.......x...', z:'..x...x...x...x.'},
+    {k:'x...x...x...x...', s:'....x.......x...', z:'..x...x...x...x.', c:'x...............'},
+    {k:'x...x...x...x...', s:'....x..o....x..o', z:'..x...x...x...x.'},
+  ]},
+  {id:'ballad', name:'Ballad', sub:'抒情 4/4', steps:16, quarters:4, variants:[
+    {k:'x...............', s:'........x.......', h:'....x.......x...'},
+    {k:'x.......x.......', s:'........x.......', h:'....x.......x...', z:'............x...'},
+    {k:'x...............', s:'........x.......', h:'....x.......x...', c:'x...............'},
+  ]},
+  {id:'afrobeat', name:'Afrobeat', sub:'非洲节拍 4/4', steps:16, quarters:4, variants:[
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'..x...x...x...x.'},
+    {k:'x..x..x...x..x..', z:'..x..x....x..x..', h:'..x...x...x...x.'},
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'..x...x...x...x.', s:'....x.......x...'},
+  ]},
+  {id:'samba', name:'Samba', sub:'桑巴 4/4', steps:16, quarters:4, variants:[
+    {k:'x.....x...x.....', s:'....x.......x...', h:'xxxxxxxxxxxxxxxx'},
+    {k:'x..x..x...x..x..', s:'....x.......x...', h:'XxXxXxXxXxXxXxXx'},
+    {k:'x.....x...x.....', z:'..x..x....x..x..', h:'xxxxxxxxxxxxxxxx'},
+  ]},
+  {id:'waltz', name:'Waltz', sub:'华尔兹 3/4', steps:12, quarters:3, variants:[
+    {k:'x...........', s:'....x...x...', h:'x...x...x...'},
+    {k:'x...x.......', s:'....x...x...', h:'x...x...x...'},
+    {k:'x...........', s:'....x...x...', h:'x...x...x...', o:'..........x.'},
+  ]},
+ ];
+
+ // 每种风格扩展成 10 条真正听得出区别的节奏：
+ // 1-3 手写基础型 → 4-6 踩镲加满成 16 分 + 吊镲 → 7-9 踩镲减成 4 分 + 底鼓切分 + 收尾开镲 → 10 全满
+ function expandRhythms(st){
+  const S = st.steps;
+  const clone = v => { const o = {}; for(const k in v) o[k] = v[k]; return o; };
+  const hit = (v,voice,i,ch) => {
+    if(i < 0 || i >= S) return;
+    if(!v[voice]) v[voice] = '.'.repeat(S);
+    const arr = v[voice].split('');
+    if(arr[i] === '.') arr[i] = ch;
+    v[voice] = arr.join('');
+  };
+  const hatKeyOf = v => (v.h !== undefined ? 'h' : (v.r !== undefined ? 'r' : null));
+  const base = st.variants.slice(0,3).map(clone);
+
+  // 4-6：踩镲填成 16 分（每拍重音），加吊镲和收尾幽灵音
+  const dense = base.map(v=>{
+    const o = clone(v);
+    const hk = hatKeyOf(o);
+    if(hk){
+      const cur = o[hk];
+      let s = '';
+      for(let i=0;i<S;i++){
+        if(cur[i] !== '.') s += cur[i];
+        else s += (i % 4 === 0 ? 'x' : 'o');
+      }
+      o[hk] = s;
+    }
+    hit(o,'c',0,'x');
+    hit(o,'s',S-1,'o');
+    hit(o,'k',S-3,'x');
+    hit(o,'o',S-2,'x');
+    return o;
+  });
+
+  // 7-9：踩镲只留每拍（4 分），去掉幽灵音，加底鼓切分和收尾开镲
+  const sparse = base.map(v=>{
+    const o = clone(v);
+    const hk = hatKeyOf(o);
+    if(hk){
+      const cur = o[hk];
+      let s = '';
+      for(let i=0;i<S;i++) s += (i % 4 === 0 ? (cur[i] !== '.' ? cur[i] : 'o') : '.');
+      o[hk] = s;
+    }
+    if(o.s) o.s = o.s.split('').map(c => (c === 'o' ? '.' : c)).join('');
+    hit(o,'k',S-2,'x');
+    hit(o,'o',S-1,'x');
+    return o;
+  });
+
+  // 10：全满
+  const full = clone(dense[0]);
+  hit(full,'s',S-1,'o');
+  hit(full,'k',Math.floor(S/2)-1,'x');
+  hit(full,'o',S-1,'x');
+
+  st.variants = [
+    base[0], dense[0], sparse[0],
+    base[1], dense[1], sparse[1],
+    base[2], dense[2], sparse[2],
+    full,
+  ];
+ }
+ DRUM_STYLES.forEach(expandRhythms);
+
+
+ const drum = {style:'pop44', variant:0, fill:0, every:4, vol:75, drive:60, countIn:4, countInTotal:0, countInLeft:0,
+   playing:false, step:0, bar:0, nextTime:0, timer:null, bus:null, comp:null, shaper:null, out:null, noise:null};
+
+ const drumStyle = () => DRUM_STYLES.find(s=>s.id===drum.style) || DRUM_STYLES[0];
+ const drumPattern = () => {
+   const st = drumStyle();
+   const list = st.variants;
+   return list[Math.min(drum.variant, list.length-1)] || list[0];
+ };
+
+ function makeNoiseBuffer(ctx){
+   const len = Math.floor(ctx.sampleRate * 1.2);
+   const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+   const d = buf.getChannelData(0);
+   for(let i=0;i<len;i++) d[i] = Math.random()*2-1;
+   return buf;
+ }
+ // 失真曲线：把鼓声压紧、削出颗粒感
+ function makeDriveCurve(amount){
+   const n = 1024, curve = new Float32Array(n);
+   const k = Math.max(0.001, amount*15);
+   const norm = Math.tanh(k);
+   for(let i=0;i<n;i++){
+     const x = i*2/(n-1)-1;
+     curve[i] = Math.tanh(k*x)/norm;
+   }
+   return curve;
+ }
+ function ensureDrumAudio(){
+   const AC = window.AudioContext || window.webkitAudioContext;
+   if(!AC) return null;
+   state.ctx = state.ctx || new AC();
+   if(state.ctx.state === 'suspended') state.ctx.resume();
+   if(!drum.bus){
+     const ctx = state.ctx;
+     drum.bus = ctx.createGain();          // 总音量
+     drum.bus.gain.value = drum.vol/100;
+     drum.comp = ctx.createDynamicsCompressor();
+     drum.comp.threshold.value = -18; drum.comp.knee.value = 10;
+     drum.comp.ratio.value = 5; drum.comp.attack.value = 0.003; drum.comp.release.value = 0.16;
+     drum.shaper = ctx.createWaveShaper();
+     drum.shaper.curve = makeDriveCurve(drum.drive/100);
+     drum.shaper.oversample = '4x';
+     drum.out = ctx.createGain();          // 补偿驱动带来的电平
+     drum.out.gain.value = 0.85;
+     drum.bus.connect(drum.comp);
+     drum.comp.connect(drum.shaper);
+     drum.shaper.connect(drum.out);
+     drum.out.connect(ctx.destination);
+   }
+   if(!drum.noise) drum.noise = makeNoiseBuffer(state.ctx);
+   return state.ctx;
+ }
+
+ // 合成各个鼓件
+ function playDrum(voice,t,vel){
+   const ctx = state.ctx, out = drum.bus;
+   if(!ctx || !out) return;
+   const v = Math.max(0.02, vel);
+   const envTo = (g,peak,atk,dec) => {
+     g.gain.setValueAtTime(0.0001,t);
+     g.gain.exponentialRampToValueAtTime(Math.max(0.0003,peak),t+atk);
+     g.gain.exponentialRampToValueAtTime(0.0001,t+atk+dec);
+   };
+   const noiseSource = () => { const s = ctx.createBufferSource(); s.buffer = drum.noise; return s; };
+
+   if(voice === 'k'){
+     const o = ctx.createOscillator(), g = ctx.createGain();
+     o.type = 'sine';
+     o.frequency.setValueAtTime(186,t);
+     o.frequency.exponentialRampToValueAtTime(44,t+0.1);
+     envTo(g,1.0*v,0.003,0.38);
+     o.connect(g); g.connect(out); o.start(t); o.stop(t+0.48);
+     const n = noiseSource(), hp = ctx.createBiquadFilter(), ng = ctx.createGain();
+     hp.type = 'highpass'; hp.frequency.value = 1600;
+     ng.gain.setValueAtTime(0.24*v,t);
+     ng.gain.exponentialRampToValueAtTime(0.0001,t+0.022);
+     n.connect(hp); hp.connect(ng); ng.connect(out); n.start(t); n.stop(t+0.05);
+     return;
+   }
+   if(voice === 's'){
+     const n = noiseSource(), bp = ctx.createBiquadFilter(), g = ctx.createGain();
+     bp.type = 'bandpass'; bp.frequency.value = 2150; bp.Q.value = 0.6;
+     envTo(g,0.55*v,0.002,0.19);
+     n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+0.24);
+     const o = ctx.createOscillator(), og = ctx.createGain();
+     o.type = 'triangle'; o.frequency.setValueAtTime(205,t);
+     envTo(og,0.28*v,0.003,0.1);
+     o.connect(og); og.connect(out); o.start(t); o.stop(t+0.14);
+     return;
+   }
+   if(voice === 'h' || voice === 'o'){
+     const n = noiseSource(), hp = ctx.createBiquadFilter(), g = ctx.createGain();
+     hp.type = 'highpass'; hp.frequency.value = voice==='h' ? 8600 : 7400;
+     envTo(g,0.22*v,0.001,voice==='h'?0.030:0.28);
+     n.connect(hp); hp.connect(g); g.connect(out); n.start(t); n.stop(t+(voice==='h'?0.06:0.34));
+     return;
+   }
+   if(voice === 'r'){
+     const n = noiseSource(), hp = ctx.createBiquadFilter(), g = ctx.createGain();
+     hp.type = 'highpass'; hp.frequency.value = 5200;
+     envTo(g,0.13*v,0.002,0.42);
+     n.connect(hp); hp.connect(g); g.connect(out); n.start(t); n.stop(t+0.5);
+     const o = ctx.createOscillator(), bp = ctx.createBiquadFilter(), og = ctx.createGain();
+     o.type = 'square'; o.frequency.value = 3150;
+     bp.type = 'bandpass'; bp.frequency.value = 3150; bp.Q.value = 6;
+     envTo(og,0.09*v,0.002,0.26);
+     o.connect(bp); bp.connect(og); og.connect(out); o.start(t); o.stop(t+0.3);
+     return;
+   }
+   if(voice === 'c'){
+     const n = noiseSource(), hp = ctx.createBiquadFilter(), g = ctx.createGain();
+     hp.type = 'highpass'; hp.frequency.value = 3400;
+     envTo(g,0.32*v,0.004,0.95);
+     n.connect(hp); hp.connect(g); g.connect(out); n.start(t); n.stop(t+1.05);
+     return;
+   }
+   if(voice === 'z'){
+     const n = noiseSource(), bp = ctx.createBiquadFilter(), g = ctx.createGain();
+     bp.type = 'bandpass'; bp.frequency.value = 2600; bp.Q.value = 2.2;
+     envTo(g,0.38*v,0.001,0.045);
+     n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+0.07);
+     return;
+   }
+   const tomFreq = {t1:210, t2:158, t3:118}[voice];
+   if(tomFreq){
+     const o = ctx.createOscillator(), g = ctx.createGain();
+     o.type = 'sine';
+     o.frequency.setValueAtTime(tomFreq,t);
+     o.frequency.exponentialRampToValueAtTime(tomFreq*0.62,t+0.16);
+     envTo(g,0.72*v,0.003,0.32);
+     o.connect(g); g.connect(out); o.start(t); o.stop(t+0.4);
+     const n = noiseSource(), hp = ctx.createBiquadFilter(), ng = ctx.createGain();
+     hp.type = 'bandpass'; hp.frequency.value = tomFreq*4; hp.Q.value = 1;
+     envTo(ng,0.10*v,0.001,0.05);
+     n.connect(hp); hp.connect(ng); ng.connect(out); n.start(t); n.stop(t+0.08);
+     return;
+   }
+ }
+
+ // 最后一拍的加花
+ function drumFill(steps,fill){
+   const beat = steps === 16 ? 4 : 3;
+   const start = steps - beat;
+   const arr = {k:new Array(steps).fill('.'), s:new Array(steps).fill('.'),
+     t1:new Array(steps).fill('.'), t2:new Array(steps).fill('.'), t3:new Array(steps).fill('.'),
+     c:new Array(steps).fill('.')};
+   const put = (row,i,ch) => { if(i>=0 && i<steps) row[i] = ch; };
+   if(fill === 1){
+     for(let i=0;i<beat;i++) put(arr.s,start+i,i===beat-1?'X':'x');
+   }else if(fill === 2){
+     const order = [arr.t1,arr.t2,arr.t3];
+     for(let i=0;i<beat;i++) put(order[i%3],start+i,i===beat-1?'X':'x');
+   }else if(fill === 3){
+     for(let i=0;i<beat;i++) put(i%2 ? arr.s : arr.k,start+i,'x');
+     put(arr.s,steps-1,'X');
+   }else if(fill === 4){
+     put(arr.c,start,'x');
+     for(let i=1;i<beat;i++) put(arr.s,start+i,i===beat-1?'X':'o');
+   }
+   const out = {};
+   for(const key in arr){
+     const str = arr[key].join('');
+     if(str.includes('X') || str.includes('x') || str.includes('o')) out[key] = str;
+   }
+   return out;
+ }
+
+ function scheduleDrumStep(step,when){
+   const st = drumStyle();
+   const isFillBar = drum.fill > 0 && ((drum.bar + 1) % drum.every === 0);
+   const pat = isFillBar ? drumFill(st.steps,drum.fill) : drumPattern();
+   for(const voice in pat){
+     const c = pat[voice][step];
+     if(!c || c === '.') continue;
+     playDrum(voice,when,DRUM_VEL[c] || 0.7);
+   }
+ }
+ function drumStepDur(){
+   const st = drumStyle();
+   return (60/state.bpm) * (st.quarters / st.steps);
+ }
+ function drumSchedule(){
+   if(!drum.playing || !state.ctx) return;
+   const ctx = state.ctx;
+   const beatDur = 60/state.bpm;
+   while(drum.nextTime < ctx.currentTime + 0.12){
+     if(drum.countInLeft > 0){
+       const idx = drum.countInTotal - drum.countInLeft;
+       playDrum('z', drum.nextTime, idx === 0 ? 1 : 0.62);
+       if(idx === 0) playDrum('k', drum.nextTime, 0.85);
+       drum.countInLeft--;
+       drum.nextTime += beatDur;
+       continue;
+     }
+     scheduleDrumStep(drum.step,drum.nextTime);
+     drum.step++;
+     if(drum.step >= drumStyle().steps){ drum.step = 0; drum.bar++; }
+     drum.nextTime += drumStepDur();
+   }
+   drum.timer = setTimeout(drumSchedule,25);
+ }
+ function startDrums(){
+   if(drum.playing){ stopDrums(); return; }
+   if(!ensureDrumAudio()){ setDrumStatus('这个浏览器不支持 Web Audio'); return; }
+   if(state.running) stop();                       // 别让节拍器哒哒声盖住鼓
+   drum.playing = true; drum.step = 0; drum.bar = 0;
+   drum.countInTotal = drum.countIn;
+   drum.countInLeft = drum.countIn;
+   drum.nextTime = state.ctx.currentTime + 0.08;
+   const b = $('drumPlay');
+   if(b){ b.textContent = '■ 停止'; b.classList.add('stop'); }
+   setDrumStatus(drum.countIn > 0
+     ? `预备拍 ${drum.countIn} 拍 → ${drumStyle().name} · ${drumStyle().sub}`
+     : `${drumStyle().name} · ${drumStyle().sub} · ${state.bpm} BPM`);
+   drumSchedule();
+ }
+ function stopDrums(){
+   drum.playing = false;
+   clearTimeout(drum.timer); drum.timer = null;
+   const b = $('drumPlay');
+   if(b){ b.textContent = '▶ 播放'; b.classList.remove('stop'); }
+   setDrumStatus('已停止');
+ }
+ const setDrumStatus = t => { const el = $('drumStatus'); if(el) el.textContent = t; };
+
+ function drumChips(host,items,activeIndex,onPick){
+   host.innerHTML = '';
+   items.forEach((item,i)=>{
+     const b = document.createElement('button');
+     b.type = 'button'; b.textContent = item.label;
+     if(item.label.length <= 2) b.classList.add('n');
+     b.classList.toggle('selected', i === activeIndex);
+     b.onclick = () => onPick(i);
+     host.appendChild(b);
+   });
+ }
+ function buildDrumUI(){
+   const host = $('drumStyles');
+   if(!host) return;
+   host.innerHTML = '';
+   DRUM_STYLES.forEach(st=>{
+     const b = document.createElement('button');
+     b.type = 'button'; b.className = 'drum-style';
+     b.innerHTML = `<b>${st.name}</b><i>${st.sub}</i>`;
+     b.classList.toggle('selected', st.id === drum.style);
+     b.onclick = () => {
+       drum.style = st.id; drum.variant = 0; drum.step = 0; drum.bar = 0;
+       buildDrumUI(); setDrumStatus(`${st.name} · ${st.sub}`);
+     };
+     host.appendChild(b);
+   });
+
+   const variants = drumStyle().variants.map((_,i)=>({label:String(i+1)}));
+   drumChips($('drumVariants'),variants,drum.variant,i=>{
+     drum.variant = i; drum.step = 0; drum.bar = 0; buildDrumUI();
+     setDrumStatus(`节奏 ${i+1}/${drumStyle().variants.length}`);
+   });
+
+   const fills = [{label:'关'},...Array.from({length:4},(_,i)=>({label:String(i+1)}))];
+   drumChips($('drumFills'),fills,drum.fill,i=>{
+     drum.fill = i; buildDrumUI();
+     setDrumStatus(i ? `加花 ${i} · 每 ${drum.every} 小节` : '不加花');
+   });
+
+   const everys = [4,8,12,16].map(n=>({label:String(n)}));
+   drumChips($('drumEvery'),everys,everys.findIndex((_,i)=>[4,8,12,16][i]===drum.every),i=>{
+     drum.every = [4,8,12,16][i]; buildDrumUI();
+     setDrumStatus(`每 ${drum.every} 小节加花`);
+   });
+
+   const counts = [{label:'关'},{label:'4 拍'},{label:'8 拍'}];
+   drumChips($('drumCountIn'),counts,[0,4,8].indexOf(drum.countIn),i=>{
+     drum.countIn = [0,4,8][i]; buildDrumUI();
+     setDrumStatus(drum.countIn ? `预备拍 ${drum.countIn} 拍` : '不自带预备拍');
+   });
+
+   const bpmEl = $('drumBpm'); if(bpmEl) bpmEl.value = state.bpm;
+ }
+
+ $('drumPlay').onclick = startDrums;
+ $('drumMinus').onclick = ()=>setBpm(state.bpm-1);
+ $('drumPlus').onclick = ()=>setBpm(state.bpm+1);
+ $('drumVolume').oninput = e=>{
+   drum.vol = Number(e.target.value);
+   $('drumVolText').textContent = drum.vol+'%';
+   if(drum.bus) drum.bus.gain.value = drum.vol/100;
+ };
+ $('drumDrive').oninput = e=>{
+   drum.drive = Number(e.target.value);
+   $('drumDriveText').textContent = drum.drive+'%';
+   if(drum.shaper) drum.shaper.curve = makeDriveCurve(drum.drive/100);
+ };
+
+ bindBpmInput($('bpm')); bindBpmInput($('drumBpm'));
+ buildFamilies(); buildTuningSelect(); buildStrings(); buildCustomRows();
+ buildDrumUI();
+
+makeLamps();setBpm(120);updateTraining();chooseTimer(5);updateFeelUI();
+})();
+</script>
+</body>
+</html>
